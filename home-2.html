@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypnoClinic | Premium Home 2</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Immersive, guided hypnotherapy experiences for profound mental transformation. Modern, scientific, and therapeutic.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F5D62',
+                        secondary: '#F4F7F6',
+                        darkBg: '#1E2D2F',
+                        darkText: '#E6F0EE'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter">
+
+    <!-- Header Section (Same as index.html) -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <!-- Home Dropdown -->
+                <div class="relative group h-full flex items-center">
+                    <button class="hover:text-primary font-medium flex items-center gap-1.5 py-4">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
+                    </button>
+                    <div class="absolute top-[80%] left-0 w-44 bg-white dark:bg-darkBg rounded-2xl shadow-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-primary/5 py-3 z-[99]">
+                        <a href="index.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home</a>
+                        <a href="home-2.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary-hover font-medium">About</a>
+                <a href="services.html" class="hover:text-primary-hover font-medium">Services</a>
+                <a href="benefits.html" class="hover:text-primary-hover font-medium">Benefits</a>
+                <a href="how-it-works.html" class="hover:text-primary-hover font-medium whitespace-nowrap">How It Works</a>
+                <a href="pricing.html" class="hover:text-primary-hover font-medium">Pricing</a>
+                <a href="contact.html" class="hover:text-primary-hover font-medium">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full"><i data-lucide="moon" class="w-6 h-6"></i></button>
+                <button id="rtl-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full"><i data-lucide="languages" class="w-6 h-6"></i></button>
+                <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full shadow-lg"><i data-lucide="layout-dashboard" class="w-6 h-6"></i></a>
+                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation Drawer Overlay -->
+        <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300" onclick="toggleMobileMenu()"></div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-secondary dark:bg-darkBg z-[60] flex flex-col p-6 pt-20 space-y-6 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="flex justify-between items-center absolute top-6 left-6 right-6">
+                 <span class="text-lg font-bold font-playfair uppercase tracking-wider">Menu</span>
+                 <button onclick="toggleMobileMenu()" class="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+                     <i data-lucide="x" class="w-6 h-6"></i>
+                 </button>
+            </div>
+            
+            <div class="flex flex-col space-y-4 text-xl font-playfair uppercase tracking-wide">
+                <div class="relative group">
+                     <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')" class="w-full flex items-center justify-between hover:text-primary transition-colors border-b border-primary/5 pb-1">
+                          <span>Home</span>
+                          <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="hidden flex flex-col space-y-4 mt-4 pl-6 border-l border-primary/10">
+                          <a href="index.html" class="hover:text-primary transition-colors text-lg">Home</a>
+                          <a href="home-2.html" class="hover:text-primary transition-colors text-lg">Home 2</a>
+                     </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">About</a>
+                <a href="services.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Services</a>
+                <a href="benefits.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Benefits</a>
+                <a href="how-it-works.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">How It Works</a>
+                <a href="pricing.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Pricing</a>
+                <a href="contact.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1 border-none">Contact</a>
+            </div>
+
+            <!-- Utility Row: Icons then Login -->
+            <div class="flex flex-col space-y-6 pt-6 border-t border-primary/10 mt-auto">
+                <div class="flex items-center space-x-10 px-2 text-primary/70">
+                    <button onclick="document.getElementById('theme-toggle').click()" class="hover:text-primary transition-colors">
+                        <i data-lucide="sun" class="w-7 h-7"></i>
+                    </button>
+                    <button onclick="document.getElementById('rtl-toggle').click()" class="hover:text-primary transition-colors">
+                        <i data-lucide="languages" class="w-7 h-7"></i>
+                    </button>
+                    <a href="dashboard.html" class="hover:text-primary transition-colors">
+                        <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
+                    </a>
+                </div>
+                
+                <a href="login.html" class="btn-primary py-4 text-center text-lg font-bold shadow-xl w-full rounded-full">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Cinematic Hero -->
+        <section class="min-h-screen relative flex items-center justify-center text-center px-4 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="assets/images/hero-2.png" alt="Cinematic background" class="w-full h-full object-cover transition-all duration-[2000ms] scale-110 group-hover:scale-100">
+                <div class="absolute inset-0 bg-gradient-to-b from-secondary/80 via-secondary/30 to-secondary/80 dark:from-darkBg/95 dark:via-darkBg/50 dark:to-darkBg/98"></div>
+            </div>
+            <div class="container relative z-10 reveal-in">
+                <h1 class="text-6xl md:text-8xl font-playfair font-bold mb-8 leading-tight text-primary dark:text-white drop-shadow-md">Beyond Conscious <br>Constraints</h1>
+                <p class="max-w-2xl mx-auto text-xl font-bold mb-12 text-slate-900 dark:text-white/80 dark:font-medium drop-shadow-sm">Experience a deep, somatic transformation. We go where traditional talk therapy stops.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a href="contact.html" class="btn-primary px-12 py-5 text-xl rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-500">Start Guided Journey</a>
+                    <a href="#guided-exp" class="btn-secondary px-12 py-5 text-xl rounded-2xl border border-primary/20 hover:bg-primary hover:text-white hover:scale-105 hover:shadow-2xl transition-all duration-500">Explore Methods</a>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+        </section>
+
+        <!-- ULTRA-LEVEL SECTION: THE SONIC SANCTUARY -->
+        <section id="guided-exp" class="py-44 bg-white dark:bg-darkBg overflow-hidden">
+             <div class="container mx-auto px-4 md:px-8">
+                  <div class="text-center max-w-3xl mx-auto mb-20 reveal-up">
+                       <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">Neuro-Acoustic Induction</span>
+                       <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 ">The Sonic Sanctuary.</h2>
+                       <p class="text-xl opacity-60 leading-relaxed font-light">Access our clinical-grade audio library directly from your member dashboard. Every session is architected to anchor positive neural states post-induction using proprietary binaural stabilization.</p>
+                  </div>
+
+                  <!-- Immersive Player Visual -->
+                  <div class="relative max-w-6xl mx-auto mb-24 reveal-up">
+                       <div class="absolute -inset-20 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+                       <div class="relative bg-secondary dark:bg-white/5 rounded-[64px] border border-primary/10 overflow-hidden shadow-2xl p-6 group">
+                            <div class="relative h-[650px] rounded-[52px] overflow-hidden">
+                                 <img src="assets/images/sonic.png" alt="Sonic Therapy" class="w-full h-full object-cover transition-all duration-[3000ms] group-hover:scale-110">
+                                 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+                                 
+                                 <!-- Active Induction UI Overlays -->
+                                 <div class="absolute bottom-12 left-12 reveal-left text-white">
+                                      <div class="flex items-center space-x-6">
+                                           <div class="w-20 h-20 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/20 group-hover:scale-110 transition-all">
+                                                <i data-lucide="play" class="fill-white w-8 h-8"></i>
+                                           </div>
+                                           <div>
+                                                <h4 class="text-2xl font-bold font-playfair">Theta-Wave Stabilization</h4>
+                                                <p class="text-sm opacity-60 uppercase tracking-widest font-bold">Clinical Session 04 • Active Inducing</p>
+                                           </div>
+                                      </div>
+                                      <!-- Fake Progress Bar -->
+                                      <div class="mt-8 w-80 h-1 bg-white/20 rounded-full overflow-hidden">
+                                           <div class="h-full bg-white w-2/3 animate-pulse"></div>
+                                      </div>
+                                 </div>
+                                 
+                                 <div class="absolute top-12 right-12 text-white reveal-right hidden md:block">
+                                      <div class="flex flex-col items-end space-y-4 opacity-70">
+                                           <span class="text-[10px] uppercase font-bold tracking-[0.3em]">Sonic Telemetry v4.2</span>
+                                           <div class="h-12 w-[1px] bg-white/30"></div>
+                                           <span class="text-[10px] uppercase font-bold tracking-[0.3em]">Hertz Match: 4.8hz</span>
+                                      </div>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+
+                  <!-- Track Grid Highlights -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-up-stagger">
+                       <div class="bg-secondary/50 dark:bg-white/5 p-12 rounded-[48px] border border-primary/5 hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <i data-lucide="brain" class="w-10 h-10 mb-8 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h4 class="text-2xl font-bold mb-4 font-playfair">Binaural Anchors</h4>
+                            <p class="opacity-60 leading-relaxed mb-8">Custom frequencies designed to lock in somatic progress after each clinical session.</p>
+                            <span class="text-[10px] font-bold uppercase tracking-widest group-hover:tracking-[0.2em] transition-all">Track ID: AC-01</span>
+                       </div>
+                       <div class="bg-secondary/50 dark:bg-white/5 p-12 rounded-[48px] border border-primary/5 hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <i data-lucide="moon" class="w-10 h-10 mb-8 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h4 class="text-2xl font-bold mb-4 font-playfair">Sleep Re-wiring</h4>
+                            <p class="opacity-60 leading-relaxed mb-8">Low-delta induction for overnight identity shifting and subconscious habit cleanup.</p>
+                            <span class="text-[10px] font-bold uppercase tracking-widest group-hover:tracking-[0.2em] transition-all">Track ID: SL-09</span>
+                       </div>
+                       <div class="bg-secondary/50 dark:bg-white/5 p-12 rounded-[48px] border border-primary/5 hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <i data-lucide="zap" class="w-10 h-10 mb-8 opacity-40 group-hover:opacity-100 transition-opacity"></i>
+                            <h4 class="text-2xl font-bold mb-4 font-playfair">Performance Induction</h4>
+                            <p class="opacity-60 leading-relaxed mb-8">High-gamma waveforms to access flow states on command for business and sporting elite.</p>
+                            <span class="text-[10px] font-bold uppercase tracking-widest group-hover:tracking-[0.2em] transition-all">Track ID: PF-02</span>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
+        <!-- UNIQUE HOME 2 SECTION 1: THE COGNITIVE LABORATORY -->
+        <section class="py-32 bg-secondary dark:bg-darkBg overflow-hidden">
+             <div class="container mx-auto px-4 md:px-8">
+                  <div class="flex flex-col lg:flex-row items-center gap-24">
+                       <div class="w-full lg:w-1/2 relative">
+                            <!-- Unique Circular Template -->
+                            <div class="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] mx-auto">
+                                 <div class="absolute inset-0 border-[40px] border-primary/5 rounded-full animate-pulse"></div>
+                                 <div class="absolute inset-10 border-[1px] border-primary/20 rounded-full animate-spin-slow"></div>
+                                 <div class="absolute inset-0 overflow-hidden rounded-full shadow-2xl border-4 border-white/50">
+                                      <img src="assets/images/laboratory.png" alt="Clinical Research" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000">
+                                 </div>
+                                 <!-- Unique floating info cards -->
+                                 <div class="absolute -top-10 -right-10 bg-white dark:bg-primary p-6 rounded-2xl shadow-xl reveal-right">
+                                      <span class="text-2xl font-bold block mb-1">R&D-04</span>
+                                      <span class="text-[10px] uppercase tracking-widest font-bold opacity-40">Predictive Neuro-Paths</span>
+                                 </div>
+                            </div>
+                       </div>
+                       <div class="w-full lg:w-1/2 reveal-up">
+                            <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">Internal Audit v2.0</span>
+                            <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">The Cognitive <br><span class=" text-primary/40">Laboratory.</span></h2>
+                            <p class="text-xl opacity-70 mb-10 leading-relaxed font-light">We view the subconscious as a programmable architecture. In our laboratory, we research the precise binaural frequencies and somatic triggers required to bypass the default mode network, enabling identity-level shifts in record time.</p>
+                            <a href="about.html" class="inline-flex items-center space-x-4 group">
+                                 <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all">
+                                      <i data-lucide="microscope" class="w-5 h-5"></i>
+                                 </div>
+                                 <span class="text-lg font-bold">Explore Our R&D →</span>
+                            </a>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
+        <!-- UNIQUE HOME 2 SECTION 2: SOMATIC RESONANCE PARALLAX -->
+        <section class="py-44 relative bg-primary dark:bg-black text-white overflow-hidden">
+             <div class="absolute inset-0 opacity-10 blur-2xl">
+                  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary rounded-full animate-pulse"></div>
+             </div>
+             
+             <div class="container mx-auto px-4 md:px-8 relative z-10">
+                  <div class="flex flex-col lg:flex-row items-center gap-20">
+                       <div class="w-full lg:w-3/5 reveal-left">
+                            <h2 class="text-6xl md:text-9xl font-playfair font-bold mb-10 leading-[0.8] tracking-tighter opacity-10 absolute -top-20 -left-10 select-none">RESONANCE.</h2>
+                            <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 ">Somatic Resonance.</h2>
+                            <p class="text-2xl opacity-80 mb-12 max-w-2xl leading-relaxed">Stable change requires the body to agree. Our protocols align heart-rate variability with theta-wave induction, creating a bio-unified state we call Somatic Resonance.</p>
+                            <div class="space-y-8">
+                                 <div class="flex items-center space-x-6">
+                                      <div class="w-1 bg-secondary h-16"></div>
+                                      <div>
+                                           <h4 class="text-xl font-bold mb-2 uppercase tracking-widest">Alignment</h4>
+                                           <p class="opacity-60">Synchronizing cardiovascular and neural rhythms.</p>
+                                      </div>
+                                 </div>
+                            </div>
+                       </div>
+                       <div class="w-full lg:w-2/5 reveal-right">
+                            <div class="rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group">
+                                 <img src="assets/images/resonance.png" alt="Somatic State" class="w-full h-[550px] object-cover transition-all duration-[2000ms] group-hover:scale-110 grayscale hover:grayscale-0">
+                            </div>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
+        <!-- UNIQUE HOME 2 SECTION 3: SUBSCONSCIOUS NETWORK DASHBOARD -->
+        <section class="py-32 bg-secondary dark:bg-black/95">
+             <div class="container mx-auto px-4 md:px-8">
+                  <div class="text-center max-w-3xl mx-auto mb-20 reveal-up">
+                       <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">Global Transformation Monitoring</span>
+                       <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-6 ">Subconscious Network.</h2>
+                       <p class="text-xl opacity-60 leading-relaxed font-light">We track clinical outcomes across 12 unique neuro-hubs worldwide, ensuring every protocol delivered meets the global "Stabilized Baseline" standard.</p>
+                  </div>
+                  
+                  <!-- Performance Stats Grid -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 reveal-up-stagger">
+                       <div class="bg-white dark:bg-white/5 p-10 rounded-[48px] border border-primary/5 shadow-xl hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <span class="text-sm uppercase font-bold tracking-widest opacity-40 block mb-6 group-hover:opacity-100 transition-opacity">Stabilization Range</span>
+                            <span class="text-5xl font-bold font-playfair ">12-18mo</span>
+                            <div class="w-24 h-[2px] bg-primary group-hover:bg-white mt-4 opacity-20"></div>
+                       </div>
+                       <div class="bg-white dark:bg-white/5 p-10 rounded-[48px] border border-primary/5 shadow-xl hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <span class="text-sm uppercase font-bold tracking-widest opacity-40 block mb-6 group-hover:opacity-100 transition-opacity">Protocol Success</span>
+                            <span class="text-5xl font-bold font-playfair ">94.2%</span>
+                            <div class="w-24 h-[2px] bg-primary group-hover:bg-white mt-4 opacity-20"></div>
+                       </div>
+                       <div class="bg-white dark:bg-white/5 p-10 rounded-[48px] border border-primary/5 shadow-xl hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <span class="text-sm uppercase font-bold tracking-widest opacity-40 block mb-6 group-hover:opacity-100 transition-opacity">Global Reach</span>
+                            <span class="text-5xl font-bold font-playfair ">48+ City</span>
+                            <div class="w-24 h-[2px] bg-primary group-hover:bg-white mt-4 opacity-20"></div>
+                       </div>
+                       <div class="bg-white dark:bg-white/5 p-10 rounded-[48px] border border-primary/5 shadow-xl hover:bg-primary hover:text-white transition-all duration-700 group">
+                            <span class="text-sm uppercase font-bold tracking-widest opacity-40 block mb-6 group-hover:opacity-100 transition-opacity">Active Cohorts</span>
+                            <span class="text-5xl font-bold font-playfair ">1,240</span>
+                            <div class="w-24 h-[2px] bg-primary group-hover:bg-white mt-4 opacity-20"></div>
+                       </div>
+                  </div>
+
+                  
+             </div>
+        </section>
+
+       
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+                <!-- Col 1: Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                            <i data-lucide="brain-circuit"></i>
+                        </div>
+                        <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
+                    </a>
+                    <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Quick Links</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Our Services</a></li>
+                        <li><a href="benefits.html" class="hover:text-primary transition-colors">Clinical Benefits</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Session Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Support -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Clinical Support</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li><a href="how-it-works.html" class="hover:text-primary transition-colors">How It Works</a></li>
+                        <li><a href="dashboard.html" class="hover:text-primary transition-colors">Client Dashboard</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Therapy FAQs</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Contact Info</h4>
+                    <ul class="space-y-6 text-sm opacity-60">
+                        <li class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>123 Serenity Node, Medical District, London, UK</span>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <i data-lucide="phone" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>+44 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <i data-lucide="mail" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>clinical.hub@hypnoclinic.io</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-6 border-t border-primary/10 dark:border-white/5 text-center text-[10px] opacity-40 font-bold tracking-widest uppercase">
+                &copy; 2026 Hypnotherapy Clinical Group. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
+
+
+

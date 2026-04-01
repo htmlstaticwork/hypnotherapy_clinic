@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypnoClinic | Clinical Hypnotherapy</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional, clinical hypnotherapy. Results-driven sessions for anxiety, habits, and phobias. High-end, therapeutic environment.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F5D62',
+                        secondary: '#F4F7F6',
+                        darkBg: '#1E2D2F',
+                        darkText: '#E6F0EE'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-4 md:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <!-- Home Dropdown -->
+                <div class="relative group h-full flex items-center">
+                    <button class="hover:text-primary font-medium flex items-center gap-1.5 py-4">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
+                    </button>
+                    <div class="absolute top-[80%] left-0 w-44 bg-white dark:bg-darkBg rounded-2xl shadow-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-primary/5 py-3 z-[99]">
+                        <a href="index.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home</a>
+                        <a href="home-2.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary-hover font-medium">About</a>
+                <a href="services.html" class="hover:text-primary-hover font-medium">Services</a>
+                <a href="benefits.html" class="hover:text-primary-hover font-medium">Benefits</a>
+                <a href="how-it-works.html" class="hover:text-primary-hover font-medium whitespace-nowrap">How It Works</a>
+                <a href="pricing.html" class="hover:text-primary-hover font-medium">Pricing</a>
+                <a href="contact.html" class="hover:text-primary-hover font-medium">Contact</a>
+            </div>
+
+            <!-- Utility Icons & Dashboard/Login -->
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
+                    <i data-lucide="moon" class="w-6 h-6"></i>
+                </button>
+                <button id="rtl-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
+                   <i data-lucide="languages" class="w-6 h-6"></i>
+                </button>
+                <!-- Hidden on mobile to make room for hamburger -->
+                <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full" title="Dashboard">
+                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                </a>
+                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation Drawer Overlay -->
+        <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300" onclick="toggleMobileMenu()"></div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-secondary dark:bg-darkBg z-[60] flex flex-col p-6 pt-20 space-y-6 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="flex justify-between items-center absolute top-6 left-6 right-6">
+                 <span class="text-lg font-bold font-playfair uppercase tracking-wider">Menu</span>
+                 <button onclick="toggleMobileMenu()" class="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+                     <i data-lucide="x" class="w-6 h-6"></i>
+                 </button>
+            </div>
+            
+            <div class="flex flex-col space-y-4 text-xl font-playfair uppercase tracking-wide">
+                <div class="relative group">
+                     <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')" class="w-full flex items-center justify-between hover:text-primary transition-colors border-b border-primary/5 pb-1">
+                          <span>Home</span>
+                          <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                     </button>
+                     <div class="hidden flex flex-col space-y-4 mt-4 pl-6 border-l border-primary/10">
+                          <a href="index.html" class="hover:text-primary transition-colors text-lg">Home</a>
+                          <a href="home-2.html" class="hover:text-primary transition-colors text-lg">Home 2</a>
+                     </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">About</a>
+                <a href="services.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Services</a>
+                <a href="benefits.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Benefits</a>
+                <a href="how-it-works.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">How It Works</a>
+                <a href="pricing.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Pricing</a>
+                <a href="contact.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1 border-none">Contact</a>
+            </div>
+
+            <!-- Utility Row: Icons then Login -->
+            <div class="flex flex-col space-y-6 pt-6 border-t border-primary/10 mt-auto">
+                <div class="flex items-center space-x-10 px-2 text-primary/70">
+                    <button onclick="document.getElementById('theme-toggle').click()" class="hover:text-primary transition-colors">
+                        <i data-lucide="sun" class="w-7 h-7"></i>
+                    </button>
+                    <button onclick="document.getElementById('rtl-toggle').click()" class="hover:text-primary transition-colors">
+                        <i data-lucide="languages" class="w-7 h-7"></i>
+                    </button>
+                    <a href="dashboard.html" class="hover:text-primary transition-colors">
+                        <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
+                    </a>
+                </div>
+                
+                <a href="login.html" class="btn-primary py-4 text-center text-lg font-bold shadow-xl w-full rounded-full">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
+                <div class="reveal-in">
+                    <h1 class="text-5xl md:text-7xl font-playfair font-bold leading-tight mb-6">
+                        Unlock your <br><span class=" text-primary/80">Subconscious.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl opacity-80 mb-10 max-w-lg leading-relaxed">
+                        Experience the most advanced clinical hypnotherapy methods to rewire your brain and break free from anxiety, bad habits, and phobias.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html" class="btn-primary px-8 py-4">Book Diagnostic Session</a>
+                        <a href="services.html" class="btn-secondary px-8 py-4">Explore Methods</a>
+                    </div>
+                </div>
+                <div class="relative reveal-up">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl animate-gentle">
+                        <img src="assets/images/hero.jpg" alt="Clinical peaceful environment" class="w-full h-[600px] object-cover" loading="lazy">
+                    </div>
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Grid -->
+        <section class="py-24 bg-white/50 dark:bg-white/5">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-3xl md:text-5xl font-playfair font-bold mb-4">Targeted Solutions.</h2>
+                    <p class="opacity-70">Focus areas where clinical hypnosis shows the highest success rates.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-12 reveal-up-stagger">
+                    <!-- Solution 1 -->
+                    <div class="card-therapeutic group text-center flex flex-col items-center">
+                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
+                             <img src="assets/images/anxiety.png" alt="Anxiety & Stress" class="w-full h-full object-cover transition-all duration-700">
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 font-playfair">Anxiety & Stress</h3>
+                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Calm the nervous system and release deep-seated tension through somatic re-anchoring.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
+                    </div>
+                    <!-- Solution 2 -->
+                    <div class="card-therapeutic group text-center flex flex-col items-center scroll-animate opacity-0" style="animation-delay: 0.1s; transform: translateY(30px)">
+                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
+                             <img src="assets/images/habits.png" alt="Habit Breaking" class="w-full h-full object-cover transition-all duration-700">
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 font-playfair">Habit Breaking</h3>
+                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Systematically dismantle the neural triggers for smoking, eating patterns, and more.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
+                    </div>
+                    <!-- Solution 3 -->
+                    <div class="card-therapeutic group text-center flex flex-col items-center scroll-animate opacity-0" style="animation-delay: 0.2s; transform: translateY(30px)">
+                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
+                             <img src="assets/images/performance.png" alt="Peak Performance" class="w-full h-full object-cover transition-all duration-700">
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 font-playfair">Peak Performance</h3>
+                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Access the flow state on command and remove identity-level limitations for success.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-32 overflow-hidden bg-white dark:bg-darkBg">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="w-full lg:w-1/2 reveal-left">
+                        <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-6 block">Real-time Metrics</span>
+                        <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">The Bio-Feedback <br><span class=" text-primary/40">Protocol.</span></h2>
+                        <p class="text-xl opacity-70 mb-10 leading-relaxed font-light">We don't guess at therapeutic depth. Our neuro-somatic interfaces monitor respiratory, galvanic, and theta-wave shifts in real-time, ensuring every induction is calibrated to your subconscious threshold.</p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="border-l-2 border-primary/20 pl-6">
+                                <span class="block text-3xl font-bold mb-2">0.2ms</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Latency Response</span>
+                            </div>
+                            <div class="border-l-2 border-primary/20 pl-6">
+                                <span class="block text-3xl font-bold mb-2">99.4%</span>
+                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Induction Stability</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 relative reveal-right">
+                        <div class="absolute -inset-4 bg-primary/5 rounded-[48px] blur-3xl animate-pulse"></div>
+                        <img src="assets/images/biofeedback.png" alt="Biofeedback Protocol" class="relative z-10 rounded-[48px] shadow-2xl object-cover h-[600px] w-full border border-primary/10">
+                        <!-- Floating Data UI element -->
+                        <div class="absolute -bottom-10 -left-10 bg-white dark:bg-darkBg p-8 rounded-3xl shadow-2xl border border-primary/5 z-20 hidden md:block animate-float">
+                             <div class="flex items-center space-x-4 mb-4">
+                                 <div class="w-3 h-3 bg-primary rounded-full animate-ping"></div>
+                                 <span class="text-[10px] uppercase font-bold tracking-widest">Active Neural Scan</span>
+                             </div>
+                             <div class="space-y-4">
+                                 <div class="h-1 w-32 bg-primary/10 rounded-full overflow-hidden">
+                                     <div class="h-full bg-primary w-2/3"></div>
+                                 </div>
+                                 <div class="h-1 w-24 bg-primary/10 rounded-full overflow-hidden">
+                                     <div class="h-full bg-primary w-1/3"></div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UNIQUE SECTION 2: NEURAL ARCHITECTURE DEEP DIVE -->
+        <section class="py-32 bg-secondary/30 dark:bg-primary/5">
+             <div class="container mx-auto px-4 md:px-8 text-center mb-20 reveal-up">
+                  <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-6 block">Core Methodology</span>
+                  <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-6">Neural Architecture.</h2>
+             </div>
+             <div class="container mx-auto px-4 md:px-8">
+                  <div class="relative max-w-6xl mx-auto rounded-[64px] overflow-hidden shadow-2xl border border-primary/10 group h-[700px]">
+                       <img src="assets/images/architecture.png" alt="Neural Architecture" class="w-full h-full object-cover transition-all duration-[2000ms] group-hover:scale-110">
+                       <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col justify-end p-12 md:p-20 text-white">
+                            <div class="max-w-2xl reveal-up">
+                                 <h3 class="text-4xl md:text-5xl font-playfair font-bold mb-8 ">The Deep Dive Stage.</h3>
+                                 <p class="text-xl opacity-80 mb-10 leading-relaxed font-light">Beneath the surface layer of conscious thought lies the original code that dictates your habits and fear responses. Our "Deep Dive" protocol bypasses these filters to initiate architectural shifts at the source.</p>
+                                 <div class="flex flex-wrap gap-4">
+                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Alpha-Sync Entry</span>
+                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Theta Code Stabilization</span>
+                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Delta Consolidation</span>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
+        <!-- UNIQUE SECTION 3: QUANTIFIED TRANSFORMATION MAP -->
+        <section class="py-32 bg-primary dark:bg-black text-white relative overflow-hidden">
+             <!-- Background pattern -->
+             <div class="absolute inset-0 opacity-10 pointer-events-none">
+                  <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/40 blur-3xl animate-float"></div>
+                  <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/40 blur-3xl animate-float" style="animation-delay: -2s"></div>
+             </div>
+             
+             <div class="container mx-auto px-4 md:px-8 relative z-10">
+                  <div class="flex flex-col lg:flex-row gap-20 items-center">
+                       <div class="w-full lg:w-1/2 reveal-left">
+                            <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-10 leading-tight ">Quantified <br>Transformation.</h2>
+                            <div class="space-y-16">
+                                 <div class="reveal-up">
+                                      <div class="text-7xl font-playfair font-bold text-secondary mb-4">84%</div>
+                                      <p class="text-lg opacity-80 max-w-sm">Reduction in clinical anxiety markers within the first 3 sessions across our patient cohort.</p>
+                                 </div>
+                                 <div class="reveal-up" style="animation-delay: 0.2s">
+                                      <div class="text-7xl font-playfair font-bold text-secondary mb-4">12mo+</div>
+                                      <p class="text-lg opacity-80 max-w-sm">Duration of habit stability. We track our clients for over a year to ensure neuro-somatic permanence.</p>
+                                 </div>
+                            </div>
+                       </div>
+                       <div class="w-full lg:w-1/2 reveal-right">
+                            <div class="relative p-4 bg-white/5 rounded-[48px] backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden group">
+                                 <img src="assets/images/transformation.png" alt="Clinical Data Map" class="rounded-[40px] w-full h-[600px] object-cover transition-all duration-[3000ms] group-hover:scale-125">
+                                 <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-all duration-700"></div>
+                                 <div class="absolute top-10 right-10 flex flex-col items-end space-y-4 text-[10px] font-bold uppercase tracking-widest opacity-60">
+                                      <span>Global Deployment v4.2</span>
+                                      <div class="w-32 h-[1px] bg-white/40"></div>
+                                      <span>Stabilized Baseline</span>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
+        
+        <!-- Featured Section -->
+        <section class="py-24">
+            <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 reveal-up">
+                    <img src="assets/images/therapist.jpg" alt="Therapy Session" class="rounded-3xl object-cover h-[500px] w-full shadow-2xl" loading="lazy">
+                </div>
+                <div class="w-full md:w-1/2 reveal-up">
+                    <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6">Expert Oversight.</h2>
+                    <p class="text-lg opacity-70 mb-10 leading-relaxed ">"Healing is not about changing who you are, but about removing the layers of defense that have restricted your original code."</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3"><i data-lucide="check-circle" class="text-primary w-6 h-6"></i> <span>Clinical Hypnosis Association (CHA) Certified</span></div>
+                        <div class="flex items-center space-x-3"><i data-lucide="check-circle" class="text-primary w-6 h-6"></i> <span>10+ Years Neuro-Somatic Research</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+                <!-- Col 1: Brand & Socials -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+                            <i data-lucide="brain-circuit"></i>
+                        </div>
+                        <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
+                    </a>
+                    <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Quick Links</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition-colors">Our Services</a></li>
+                        <li><a href="benefits.html" class="hover:text-primary transition-colors">Clinical Benefits</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Session Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Support -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Clinical Support</h4>
+                    <ul class="space-y-4 text-sm opacity-60">
+                        <li><a href="how-it-works.html" class="hover:text-primary transition-colors">How It Works</a></li>
+                        <li><a href="dashboard.html" class="hover:text-primary transition-colors">Client Dashboard</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Therapy FAQs</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-5  font-playfair">Contact Info</h4>
+                    <ul class="space-y-6 text-sm opacity-60">
+                        <li class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>123 Serenity Node, Medical District, London, UK</span>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <i data-lucide="phone" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>+44 (800) 555-0199</span>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <i data-lucide="mail" class="text-primary w-5 h-5 flex-shrink-0"></i>
+                            <span>clinical.hub@hypnoclinic.io</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Copyright -->
+            <div class="pt-6 border-t border-primary/10 dark:border-white/5 text-center text-[10px] opacity-40 font-bold tracking-widest uppercase">
+                &copy; 2026 Hypnotherapy Clinical Group. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
+
+
+

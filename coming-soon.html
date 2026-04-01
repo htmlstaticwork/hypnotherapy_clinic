@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | HypnoClinic</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F5D62',
+                        secondary: '#F4F7F6',
+                        darkBg: '#1E2D2F',
+                        darkText: '#E6F0EE'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter h-screen flex flex-col items-center justify-center p-4 text-center">
+
+    <div class="scroll-animate opacity-0">
+        <a href="index.html" class="flex items-center justify-center space-x-2 mb-20 group">
+                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <span class="text-3xl font-bold font-playfair uppercase tracking-widest text-primary ">HypnoClinic</span>
+        </a>
+        <h1 class="text-4xl md:text-7xl font-playfair font-bold mb-8 ">The Meta-Program <br>is Loading...</h1>
+        <p class="text-xl  opacity-40 mb-12 max-w-xl mx-auto">We are architecting a new digital subconscious experience. Join the early-access protocols below.</p>
+        
+        <div class="max-w-md mx-auto relative mb-20 group">
+            <input type="email" placeholder="Personal Email ID" class="w-full bg-white dark:bg-white/5 border-2 border-primary/10 px-6 py-6 rounded-3xl focus:outline-none focus:border-primary transition-all pr-40 text-lg">
+            <button class="absolute top-2 right-2 bg-primary text-secondary px-8 py-4 rounded-[1.2rem] font-bold  shadow-xl">Join Waitlist</button>
+        </div>
+
+        <div class="flex items-center justify-center space-x-8 opacity-20 text-xs font-bold uppercase tracking-[0.4em] ">
+             <span>Digital Clinical Release v0.1</span>
+             <span class="w-1 h-1 bg-primary rounded-full"></span>
+             <span>ETA: Spring 2026</span>
+        </div>
+    </div>
+
+    <!-- Theme/RTL Utilities -->
+    <div class="fixed bottom-10 right-10 flex space-x-4">
+         <button id="theme-toggle" class="p-3 bg-white dark:bg-white/5 rounded-full shadow-xl shadow-primary/5 active:scale-95 transition-all"><i data-lucide="moon" class="w-6 h-6"></i></button>
+         <button id="rtl-toggle" class="p-3 bg-white dark:bg-white/5 rounded-full shadow-xl shadow-primary/5 active:scale-95 transition-all"><i data-lucide="languages" class="w-6 h-6"></i></button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

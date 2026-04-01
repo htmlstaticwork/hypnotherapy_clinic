@@ -1,0 +1,228 @@
+/* Core Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --primary: #2F5D62;
+  --primary-hover: #1E3D40;
+  --secondary: #F4F7F6;
+  --dark-bg: #1E2D2F;
+  --dark-text: #E6F0EE;
+  
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary);
+  background-color: var(--secondary);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes Float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-gentle {
+  animation: Float 6s ease-in-out infinite;
+}
+
+/* === PREMIUM CLINICAL MOTION SYSTEM === */
+@keyframes revealUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.98); 
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+        filter: blur(0);
+    }
+}
+
+@keyframes revealIn {
+    from { 
+        opacity: 0; 
+        filter: blur(20px);
+    }
+    to { 
+        opacity: 1; 
+        filter: blur(0);
+    }
+}
+
+.reveal-up { opacity: 0; }
+.reveal-in { opacity: 0; }
+
+.reveal-up.active { 
+    animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+.reveal-in.active { 
+    animation: revealIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+}
+
+/* Stagger delays for grids */
+.reveal-up-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.reveal-up-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.reveal-up-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.reveal-up-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.reveal-up-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.reveal-up-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+.scroll-animate {
+  transition: all 0.8s ease;
+}
+
+.scroll-animate.active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Header & Nav */
+header {
+  background: var(--secondary);
+  border-bottom: 1px solid rgba(47, 93, 98, 0.1);
+}
+
+body.dark header {
+  background: var(--dark-bg);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+}
+
+body.dark .btn-secondary {
+  border-color: var(--dark-text);
+  color: var(--dark-text);
+}
+
+.card-therapeutic {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+body.dark .card-therapeutic {
+  background: rgba(255,255,255,0.05);
+}
+
+.card-therapeutic:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Dashboard Layout */
+.dashboard-sidebar {
+  width: 280px;
+  height: 100vh;
+  background: var(--primary);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  color: white;
+}
+
+.dashboard-content {
+  margin-left: 280px;
+  min-height: 100vh;
+  width: calc(100% - 280px); /* Ensure width is explicit to prevent overflow */
+}
+
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+    box-shadow: 20px 0 50px rgba(0,0,0,0.2);
+  }
+  .dashboard-sidebar.active {
+    transform: translateX(0);
+  }
+  .dashboard-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(47, 93, 98, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(47, 93, 98, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Prevent accidental horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Premium Utilities */
+.shadow-3xl {
+  box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.25);
+}
+
+.glass-clinical {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
