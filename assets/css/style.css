@@ -254,6 +254,17 @@ body.dark header {
   color: var(--primary-hover);
 }
 
+#mobile-menu .mobile-nav-current {
+  color: var(--primary-hover) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+#mobile-menu .mobile-nav-current-parent {
+  border-color: rgba(47, 93, 98, 0.24);
+}
+
 body.dark .nav-active-parent {
   color: white;
 }
@@ -261,6 +272,14 @@ body.dark .nav-active-parent {
 body.dark .nav-active-sub {
   background: rgba(255, 255, 255, 0.08);
   color: white;
+}
+
+body.dark #mobile-menu .mobile-nav-current {
+  color: white !important;
+}
+
+body.dark #mobile-menu .mobile-nav-current-parent {
+  border-color: rgba(255, 255, 255, 0.24);
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
@@ -605,12 +624,29 @@ body:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5,
 .dashboard-sidebar {
   width: 280px;
   height: 100vh;
-  background: var(--primary-hover);
+  background: var(--secondary);
   position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
+  color: var(--primary);
+  border-right: 1px solid var(--border-clinical);
+}
+
+body.dark .dashboard-sidebar {
+  background: var(--primary-hover);
   color: white;
+  border-right-color: transparent;
+}
+
+.dashboard-sidebar .tab-btn:hover,
+.dashboard-sidebar .tab-btn.active-tab {
+  background: rgba(47, 93, 98, 0.12);
+}
+
+body.dark .dashboard-sidebar .tab-btn:hover,
+body.dark .dashboard-sidebar .tab-btn.active-tab {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-content {
@@ -792,6 +828,22 @@ body.dark .biofeedback-hub .data-badge::before {
   z-index: 10;
 }
 
+body:not(.dark) .hero-clinical .data-badge {
+  color: rgba(35, 72, 76, 0.92);
+  border-color: rgba(35, 72, 76, 0.26);
+  opacity: 1;
+  animation: none;
+}
+
+body:not(.dark) .hero-clinical .data-badge::before {
+  background: rgba(35, 72, 76, 0.92);
+  animation: none;
+}
+
+body:not(.dark) .hero-clinical .data-badge .opacity-30 {
+  opacity: 0.72;
+}
+
 .hero-title-main {
   font-size: clamp(3.5rem, 8vw, 6rem);
   line-height: 0.9;
@@ -895,11 +947,25 @@ body.dark .hero-cta-group .btn-secondary:hover {
   text-underline-offset: 0.28em;
 }
 
+.footer-clinical a[class*="hover:text-primary"]:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
 .footer-clinical .footer-social-link {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-clinical .footer-social-icon {
+  transition: color 0.3s ease;
+}
+
+.footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"] {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"] svg {
   transition: color 0.3s ease;
 }
 
@@ -913,9 +979,25 @@ body.dark .hero-cta-group .btn-secondary:hover {
   color: white !important;
 }
 
+.footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"]:hover {
+  background: var(--primary-hover) !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"]:hover svg {
+  color: white !important;
+}
+
 body.dark .footer-clinical .footer-link:hover {
   color: #9fd3d8;
   opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+body.dark .footer-clinical a[class*="hover:text-primary"]:hover {
+  color: #9fd3d8;
   text-decoration: underline;
   text-underline-offset: 0.28em;
 }
@@ -936,6 +1018,15 @@ body.dark .footer-clinical .footer-social-link:hover {
 }
 
 body.dark .footer-clinical .footer-social-link:hover .footer-social-icon {
+  color: var(--dark-bg) !important;
+}
+
+body.dark .footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"]:hover {
+  background: white !important;
+  color: var(--dark-bg) !important;
+}
+
+body.dark .footer-clinical a[class*="bg-primary/5"][class*="rounded-full"][class*="justify-center"]:hover svg {
   color: var(--dark-bg) !important;
 }
 

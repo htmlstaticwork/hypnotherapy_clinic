@@ -30,12 +30,12 @@
 <body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter overflow-hidden">
 
     <!-- Dashboard Sidebar Overlay -->
-    <div id="sidebar-overlay" class="lg:hidden hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[90] transition-opacity duration-300" onclick="toggleSidebar()"></div>
+    <div id="sidebar-overlay" class="xl:hidden hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[90] transition-opacity duration-300" onclick="toggleSidebar()"></div>
 
     <!-- Dashboard Sidebar -->
     <aside id="dashboard-sidebar" class="dashboard-sidebar flex flex-col p-8 transition-all duration-300 z-[100]">
         <!-- Mobile Close Button -->
-        <button onclick="toggleSidebar()" class="lg:hidden absolute top-4 right-4 p-2 transition-all opacity-50 hover:opacity-100 z-[110]">
+        <button onclick="toggleSidebar()" class="xl:hidden absolute top-4 right-4 p-2 transition-all opacity-50 hover:opacity-100 z-[110]">
              <i data-lucide="x" class="w-6 h-6 text-darkBg"></i>
         </button>
 
@@ -43,11 +43,11 @@
             <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all">
                 <i data-lucide="brain-circuit"></i>
             </div>
-            <span class="text-xl font-bold font-playfair uppercase tracking-wider text-white">HypnoClinic</span>
+            <span class="text-xl font-bold font-playfair uppercase tracking-wider text-primary dark:text-darkText">HypnoClinic</span>
         </a>
 
         <div class="space-y-4 flex-grow text-sm uppercase tracking-widest font-bold opacity-70">
-            <button onclick="switchTab('overview')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 active-tab flex items-center space-x-4">
+            <button onclick="switchTab('overview')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 bg-white/10 active-tab flex items-center space-x-4">
                 <i data-lucide="home" class="w-5 h-5"></i> <span>Overview</span>
             </button>
             <button onclick="switchTab('sessions')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 flex items-center space-x-4">
@@ -67,7 +67,7 @@
             </button>
         </div>
 
-        <button onclick="window.location.href='index.html'" class="mt-auto p-4 rounded-2xl hover:bg-red-500/10 flex items-center space-x-4 text-red-100 font-bold text-sm tracking-widest">
+        <button onclick="window.location.href='index.html'" class="mt-auto p-4 rounded-2xl hover:bg-red-500/10 flex items-center space-x-4 text-red-600 dark:text-red-100 font-bold text-sm tracking-widest">
             <i data-lucide="log-out" class="w-5 h-5"></i> <span>Logout</span>
         </button>
     </aside>
@@ -76,7 +76,7 @@
     <main class="dashboard-content h-screen flex flex-col pt-0 px-0 overflow-y-auto">
         <!-- Topbar (Sticky) -->
         <header class="sticky top-0 flex items-center justify-between py-2 md:py-8 mb-4 md:mb-8 px-4 md:px-12 bg-secondary/95 dark:bg-darkBg/95 backdrop-blur-xl z-[90] border-b border-primary/5">
-            <div class="flex items-center space-x-4 lg:hidden">
+            <div class="flex items-center space-x-4 xl:hidden">
                  <button onclick="toggleSidebar()" class="p-2.5 bg-white dark:bg-white/5 rounded-xl shadow-lg"><i data-lucide="menu" class="w-5 h-5"></i></button>
             </div>
             <div>
@@ -272,7 +272,7 @@
                  <div class="space-y-6">
                      <div class="flex justify-between items-end">
                          <h4 class="text-2xl font-playfair font-bold">Recommended for You</h4>
-                         <button class="text-xs font-bold uppercase tracking-widest text-primary/60 hover:text-primary transition-colors">View All Library</button>
+                         <button class="text-xs font-bold uppercase tracking-widest text-primary/85 hover:text-primary transition-colors">View All Library</button>
                      </div>
                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                          <div class="recommended-audio-card card-therapeutic p-6 flex items-center space-x-6 hover:bg-primary hover:text-white group cursor-pointer transition-all duration-500">
@@ -509,7 +509,7 @@
             const btns = document.querySelectorAll('.tab-btn');
             btns.forEach(btn => btn.classList.remove('bg-white/10', 'active-tab'));
             event.currentTarget.classList.add('bg-white/10', 'active-tab');
-            if (window.innerWidth < 1024) toggleSidebar();
+            if (window.innerWidth <= 1024) toggleSidebar();
         }
         function toggleSidebar() {
             document.getElementById('dashboard-sidebar').classList.toggle('active');
@@ -517,8 +517,11 @@
     </script>
     <style>
         .active-tab {
-            color: #fff;
+            color: var(--primary);
             opacity: 1 !important;
+        }
+        body.dark .active-tab {
+            color: #fff;
         }
         .clinical-scrollbar::-webkit-scrollbar {
             height: 4px;

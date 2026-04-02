@@ -513,6 +513,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const initMobileMenuActiveState = () => {
+        const menu = document.getElementById('mobile-menu');
+        if (!menu) return;
+
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const normalizedPage = currentPage === 'service-details.html' ? 'services.html' : currentPage;
+
+        const homeGroup = menu.querySelector('.relative.group');
+        const homeButton = homeGroup?.querySelector('button');
+        const homeSubmenu = homeGroup?.querySelector('div');
+        const homeChevron = homeButton?.querySelector('i');
+
+        menu.querySelectorAll('a[href]').forEach((link) => {
+            const href = link.getAttribute('href');
+            if (href === normalizedPage) {
+                link.classList.add('mobile-nav-current');
+            }
+        });
+
+        if (currentPage === 'index.html' || currentPage === 'home-2.html') {
+            homeButton?.classList.add('mobile-nav-current', 'mobile-nav-current-parent');
+            homeSubmenu?.classList.remove('hidden');
+            homeChevron?.classList.add('rotate-180');
+        }
+    };
+
+    initMobileMenuActiveState();
+
     // Attach listener for the specific hamburger button ID
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
     if (mobileMenuBtn) {
