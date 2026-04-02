@@ -27,7 +27,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter min-h-screen flex items-center justify-center p-4 py-12">
+<body class="auth-page bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter min-h-screen flex items-center justify-center p-4 py-12">
 
     <div class="w-full max-w-md bg-white dark:bg-white/5 border border-primary/5 shadow-2xl rounded-[3rem] p-12">
         <div class="text-center mb-10">
@@ -38,49 +38,58 @@
                 <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
             </a>
             <h1 class="text-3xl font-playfair font-bold mb-2 ">Welcome back.</h1>
-            <p class="opacity-40  text-sm">Enter the sanctuary of your mind.</p>
+            <p class="auth-subtitle text-sm">Enter the sanctuary of your mind.</p>
         </div>
 
         <form class="space-y-6">
             <div>
-                <label class="block mb-2 text-xs font-bold uppercase tracking-widest  opacity-40">Identity Address</label>
+                <label class="auth-label block mb-2 text-xs font-bold uppercase tracking-widest">Identity Address</label>
                 <input type="email" placeholder="Email" class="form-input" required>
             </div>
             <div class="relative">
-                <label class="block mb-2 text-xs font-bold uppercase tracking-widest  opacity-40">Encryption Key</label>
-                <input type="password" placeholder="Password" class="form-input" required>
-                <button type="button" class="absolute top-10 right-4 opacity-40 hover:opacity-100"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                <label class="auth-label block mb-2 text-xs font-bold uppercase tracking-widest">Encryption Key</label>
+                <div class="relative">
+                    <input type="password" placeholder="Password" class="form-input" required>
+                    <button type="button" class="auth-icon-button absolute inset-y-0 right-4 flex items-center"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                </div>
             </div>
 
-            <div class="flex items-center justify-between text-xs font-bold uppercase tracking-widest  opacity-40">
+            <div class="auth-meta flex items-center justify-between text-xs font-bold uppercase tracking-widest">
                 <div class="flex items-center space-x-2">
                     <input type="checkbox" class="w-4 h-4 bg-transparent border border-primary/20 rounded">
                     <span>Remember</span>
                 </div>
-                <a href="#" class="hover:underline">Forgot Key?</a>
+                <a href="#" class="auth-link hover:underline">Forgot Key?</a>
             </div>
 
             <button type="button" onclick="window.location.href='#'" class="w-full btn-primary py-5 rounded-full font-bold text-lg  shadow-xl">Login</button>
         </form>
 
-        <div class="my-10 flex items-center space-x-6 opacity-10">
+        <div class="auth-divider my-10 flex items-center space-x-6">
              <div class="h-px bg-primary w-full"></div>
              <span class="text-xs uppercase font-bold tracking-[0.5em] ">Or</span>
              <div class="h-px bg-primary w-full"></div>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
-            <button class="border border-primary/20 p-4 rounded-3xl flex items-center justify-center hover:bg-primary/5 transition-all">
-                <i data-lucide="chrome" class="w-5 h-5 mr-3"></i>
+            <button class="auth-social-btn border border-primary/20 p-4 rounded-3xl flex items-center justify-center transition-all">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="auth-social-icon w-5 h-5 mr-3">
+                    <path fill="currentColor" d="M21.805 10.023H12.25v3.955h5.488c-.236 1.27-.955 2.347-2.021 3.067v2.544h3.273c1.916-1.764 3.015-4.36 3.015-7.439 0-.719-.064-1.411-.2-2.127Z"/>
+                    <path fill="currentColor" d="M12.25 22c2.734 0 5.029-.903 6.705-2.411l-3.273-2.544c-.903.612-2.057.979-3.432.979-2.638 0-4.875-1.78-5.672-4.175H3.193v2.622A10.121 10.121 0 0 0 12.25 22Z"/>
+                    <path fill="currentColor" d="M6.578 13.849a6.075 6.075 0 0 1-.317-1.849c0-.64.113-1.261.317-1.849V7.529H3.193A10.12 10.12 0 0 0 2.125 12c0 1.633.39 3.177 1.068 4.471l3.385-2.622Z"/>
+                    <path fill="currentColor" d="M12.25 5.976c1.488 0 2.825.513 3.878 1.519l2.897-2.897C17.274 2.964 14.979 2 12.25 2 8.222 2 4.725 4.315 3.193 7.529l3.385 2.622c.797-2.395 3.034-4.175 5.672-4.175Z"/>
+                </svg>
                 <span class="text-xs font-bold uppercase tracking-widest ">Google</span>
             </button>
-            <button class="border border-primary/20 p-4 rounded-3xl flex items-center justify-center hover:bg-primary/5 transition-all">
-                <i data-lucide="apple" class="w-5 h-5 mr-3"></i>
-                <span class="text-xs font-bold uppercase tracking-widest ">Apple</span>
+            <button class="auth-social-btn border border-primary/20 p-4 rounded-3xl flex items-center justify-center transition-all">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="auth-social-icon w-5 h-5 mr-3">
+                    <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.026 4.388 11.022 10.125 11.927v-8.437H7.078v-3.49h3.047V9.413c0-3.03 1.792-4.702 4.533-4.702 1.313 0 2.686.236 2.686.236v2.974H15.83c-1.49 0-1.955.931-1.955 1.887v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.095 24 18.099 24 12.073Z"/>
+                </svg>
+                <span class="text-xs font-bold uppercase tracking-widest ">Facebook</span>
             </button>
         </div>
 
-        <p class="mt-12 text-center text-xs opacity-40 ">New here? <a href="signup.html" class="font-bold underline  hover:text-primary transition-all">Apply for clinical baseline</a></p>
+        <p class="auth-footer-copy mt-12 text-center text-xs">New here? <a href="signup.html" class="auth-link font-bold hover:underline underline-offset-4 transition-all">Apply for clinical baseline</a></p>
     </div>
 
     <!-- Theme/RTL Utilities -->

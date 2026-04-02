@@ -126,8 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 3. ADVANCED CURSOR SYSTEM (Clinical Follower) ---
     const isAuthPage = window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html');
+    const isStaticUtilityPage = window.location.pathname.includes('404.html') || window.location.pathname.includes('coming-soon.html');
 
-    if (!isAuthPage) {
+    if (!isAuthPage && !isStaticUtilityPage) {
         const cursor = document.createElement('div');
         cursor.className = 'clinical-cursor-follower';
         cursor.style.cssText = `
@@ -632,4 +633,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // End of Clinical Architecture Protocol
 });
-

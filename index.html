@@ -46,16 +46,17 @@
             <div class="hidden lg:flex items-center space-x-6">
                 <!-- Home Dropdown -->
                 <div class="relative group h-full flex items-center">
-                    <button class="hover:text-primary font-medium flex items-center gap-1.5 py-4">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
+                    <button class="nav-active-parent hover:text-primary font-medium flex items-center gap-1.5 py-4" aria-current="page">
+                        Home <i data-lucide="chevron-down" class="nav-active-icon w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
                     </button>
                     <div class="absolute top-[80%] left-0 w-44 bg-white dark:bg-darkBg rounded-2xl shadow-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-primary/5 py-3 z-[99]">
-                        <a href="index.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home</a>
+                        <a href="index.html" class="nav-active-sub block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm" aria-current="page">Home</a>
                         <a href="home-2.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home 2</a>
                     </div>
                 </div>
-                <a href="about.html" class="hover:text-primary-hover font-medium">About</a>
+                
                 <a href="services.html" class="hover:text-primary-hover font-medium">Services</a>
+                <a href="about.html" class="hover:text-primary-hover font-medium">About</a>
                 <a href="benefits.html" class="hover:text-primary-hover font-medium">Benefits</a>
                 <a href="how-it-works.html" class="hover:text-primary-hover font-medium whitespace-nowrap">How It Works</a>
                 <a href="pricing.html" class="hover:text-primary-hover font-medium">Pricing</a>
@@ -153,7 +154,7 @@
                     <p class="hero-paragraph-clinical">
                         Experience the most advanced clinical hypnotherapy methods to rewire your brain and break free from anxiety, bad habits, and phobias.
                     </p>
-                    <div class="flex flex-wrap gap-4">
+                    <div class="hero-cta-group flex flex-wrap gap-4">
                         <a href="contact.html" class="btn-primary w-full sm:w-auto text-center">Book Diagnostic Session</a>
                         <a href="services.html" class="btn-secondary w-full sm:w-auto text-center">Explore Methods</a>
                     </div>
@@ -166,7 +167,6 @@
                     
                 </div>
             </div>
-            <div class="coord-marker coord-bottom-right">NODE_ID: CLI_H1_SEC_01</div>
         </section>
 
         <div class="section-divider-neural"></div>
@@ -249,17 +249,13 @@
                   <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-6">Neural Architecture.</h2>
              </div>
              <div class="container mx-auto px-4 md:px-8">
-                  <div class="relative max-w-6xl mx-auto rounded-[64px] overflow-hidden shadow-2xl border border-primary/10 group h-[700px]">
-                       <img src="assets/images/architecture.png" alt="Neural Architecture" class="w-full h-full object-cover transition-all duration-[2000ms] group-hover:scale-110">
-                       <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col justify-end p-12 md:p-20 text-white">
-                            <div class="max-w-2xl reveal-up">
-                                 <h3 class="text-4xl md:text-5xl font-playfair font-bold mb-8 ">The Deep Dive Stage.</h3>
-                                 <p class="text-xl opacity-80 mb-10 leading-relaxed font-light">Beneath the surface layer of conscious thought lies the original code that dictates your habits and fear responses. Our "Deep Dive" protocol bypasses these filters to initiate architectural shifts at the source.</p>
-                                 <div class="flex flex-wrap gap-4">
-                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Alpha-Sync Entry</span>
-                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Theta Code Stabilization</span>
-                                      <span class="px-6 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest border border-white/20">Delta Consolidation</span>
-                                 </div>
+                  <div class="core-methodology-card relative max-w-6xl mx-auto rounded-[64px] overflow-hidden shadow-2xl border border-primary/10 group h-[700px]">
+                       <img src="assets/images/architecture.png" alt="Neural Architecture" class="core-methodology-image w-full h-full object-cover transition-all duration-[2000ms] group-hover:scale-110">
+                       <div class="core-methodology-overlay absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex flex-col justify-end p-12 md:p-20 text-white">
+                            <div class="core-methodology-content max-w-2xl reveal-up">
+                                 <h3 class="core-methodology-title text-4xl md:text-5xl font-playfair font-bold mb-8 ">The Deep Dive Stage.</h3>
+                                 <p class="core-methodology-desc text-xl opacity-80 mb-10 leading-relaxed font-light">Beneath the surface layer of conscious thought lies the original code that dictates your habits and fear responses. Our "Deep Dive" protocol bypasses these filters to initiate architectural shifts at the source.</p>
+                                
                             </div>
                        </div>
                   </div>
@@ -267,7 +263,7 @@
         </section>
 
         <!-- UNIQUE SECTION 3: QUANTIFIED TRANSFORMATION MAP -->
-        <section class="py-20 bg-primary dark:bg-black text-white relative overflow-hidden">
+        <section class="quantified-transformation-section py-20 bg-primary dark:bg-black text-white relative overflow-hidden">
              <!-- Background pattern -->
              <div class="absolute inset-0 opacity-10 pointer-events-none">
                   <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/40 blur-3xl animate-float"></div>
@@ -276,7 +272,7 @@
              
              <div class="container mx-auto px-4 md:px-8 relative z-10">
                   <div class="flex flex-col lg:flex-row gap-20 items-center">
-                       <div class="w-full lg:w-1/2 reveal-left">
+                       <div class="quantified-transformation-copy w-full lg:w-1/2 reveal-left">
                             <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-10 leading-tight ">Quantified <br>Transformation.</h2>
                             <div class="space-y-16">
                                  <div class="reveal-up">
@@ -289,9 +285,9 @@
                                  </div>
                             </div>
                        </div>
-                       <div class="w-full lg:w-1/2 reveal-right">
-                            <div class="relative p-4 bg-white/5 rounded-[48px] backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden group">
-                                 <img src="assets/images/transformation.png" alt="Clinical Data Map" class="rounded-[40px] w-full h-[600px] object-cover transition-all duration-[3000ms] group-hover:scale-125">
+                       <div class="quantified-transformation-media w-full lg:w-1/2 reveal-right">
+                            <div class="quantified-transformation-frame relative p-4 bg-white/5 rounded-[48px] backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden group">
+                                 <img src="assets/images/transformation.png" alt="Clinical Data Map" class="quantified-transformation-image rounded-[40px] w-full h-[600px] object-cover transition-all duration-[3000ms] group-hover:scale-125">
                                  <div class="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-all duration-700"></div>
                                  <div class="absolute top-10 right-10 flex flex-col items-end space-y-4 text-[10px] font-bold uppercase tracking-widest opacity-60">
                                       <span>Global Deployment v4.2</span>
@@ -324,7 +320,7 @@
     </main>
 
     <!-- Main Footer -->
-    <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
+    <footer class="footer-clinical bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
         <div class="container mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-10">
                 <!-- Col 1: Brand & Socials -->
@@ -337,17 +333,17 @@
                     </a>
                     <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        <a href="#" class="footer-social-link w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-social-icon text-primary dark:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        <a href="#" class="footer-social-link w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-social-icon text-primary dark:text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="#" class="footer-social-link w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-social-icon text-primary dark:text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <a href="#" class="footer-social-link w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-social-icon text-primary dark:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                         </a>
                     </div>
                 </div>
@@ -355,24 +351,24 @@
                 <!-- Col 2: Quick Links -->
                 <div>
                     <h4 class="text-lg font-bold mb-5  font-playfair">Quick Links</h4>
-                    <ul class="space-y-4 text-sm opacity-60">
-                        <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                        <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-primary transition-colors">Our Services</a></li>
-                        <li><a href="benefits.html" class="hover:text-primary transition-colors">Clinical Benefits</a></li>
-                        <li><a href="pricing.html" class="hover:text-primary transition-colors">Session Pricing</a></li>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="footer-link opacity-60 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html" class="footer-link opacity-60 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="footer-link opacity-60 hover:text-primary transition-colors">Our Services</a></li>
+                        <li><a href="benefits.html" class="footer-link opacity-60 hover:text-primary transition-colors">Clinical Benefits</a></li>
+                        <li><a href="pricing.html" class="footer-link opacity-60 hover:text-primary transition-colors">Session Pricing</a></li>
                     </ul>
                 </div>
 
                 <!-- Col 3: Support -->
                 <div>
                     <h4 class="text-lg font-bold mb-5  font-playfair">Clinical Support</h4>
-                    <ul class="space-y-4 text-sm opacity-60">
-                        <li><a href="how-it-works.html" class="hover:text-primary transition-colors">How It Works</a></li>
-                        <li><a href="dashboard.html" class="hover:text-primary transition-colors">Client Dashboard</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Therapy FAQs</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="how-it-works.html" class="footer-link opacity-60 hover:text-primary transition-colors">How It Works</a></li>
+                        <li><a href="dashboard.html" class="footer-link opacity-60 hover:text-primary transition-colors">Client Dashboard</a></li>
+                        <li><a href="#" class="footer-link opacity-60 hover:text-primary transition-colors">Therapy FAQs</a></li>
+                        <li><a href="#" class="footer-link opacity-60 hover:text-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link opacity-60 hover:text-primary transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
 
