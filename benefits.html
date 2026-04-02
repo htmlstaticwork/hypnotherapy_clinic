@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benefits | HypnoClinic</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Discover the clinical benefits of professional hypnotherapy. Rapid, lasting, and gentle healing.">
-    
+    <meta name="description"
+        content="Discover the clinical benefits of professional hypnotherapy. Rapid, lasting, and gentle healing.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,13 +27,14 @@
             }
         }
     </script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter">
 
     <!-- Header Section (Consistent) -->
@@ -46,233 +50,291 @@
                 <!-- Home Dropdown -->
                 <div class="relative group h-full flex items-center">
                     <button class="hover:text-primary font-medium flex items-center gap-1.5 py-4">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
+                        Home <i data-lucide="chevron-down"
+                            class="w-4 h-4 transition-transform group-hover:rotate-180 opacity-60"></i>
                     </button>
-                    <div class="absolute top-[80%] left-0 w-44 bg-white dark:bg-darkBg rounded-2xl shadow-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-primary/5 py-3 z-[99]">
-                        <a href="index.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home</a>
-                        <a href="home-2.html" class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home 2</a>
+                    <div
+                        class="absolute top-[80%] left-0 w-44 bg-white dark:bg-darkBg rounded-2xl shadow-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-primary/5 py-3 z-[99]">
+                        <a href="index.html"
+                            class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home</a>
+                        <a href="home-2.html"
+                            class="block px-6 py-2.5 hover:bg-primary/5 hover:text-primary-hover transition-colors font-medium text-sm">Home
+                            2</a>
                     </div>
                 </div>
                 <a href="about.html" class="hover:text-primary-hover font-medium">About</a>
                 <a href="services.html" class="hover:text-primary-hover font-medium">Services</a>
-                <a href="benefits.html" class="hover:text-primary-hover font-medium underline underline-offset-8">Benefits</a>
-                <a href="how-it-works.html" class="hover:text-primary-hover font-medium whitespace-nowrap">How It Works</a>
+                <a href="benefits.html"
+                    class="hover:text-primary-hover font-medium underline underline-offset-8">Benefits</a>
+                <a href="how-it-works.html" class="hover:text-primary-hover font-medium whitespace-nowrap">How It
+                    Works</a>
                 <a href="pricing.html" class="hover:text-primary-hover font-medium">Pricing</a>
                 <a href="contact.html" class="hover:text-primary-hover font-medium">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
+                <button id="theme-toggle"
+                    class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
                     <i data-lucide="moon" class="w-6 h-6"></i>
                 </button>
                 <button id="rtl-toggle" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
-                   <i data-lucide="languages" class="w-6 h-6"></i>
+                    <i data-lucide="languages" class="w-6 h-6"></i>
                 </button>
                 <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
                     <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                 </a>
-                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                <a href="login.html" class="hidden lg:flex btn-primary">Login</a>
                 <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
                     <i data-lucide="menu" class="w-8 h-8"></i>
                 </button>
             </div>
         </nav>
         <!-- Mobile Navigation Drawer Overlay -->
-        <div id="mobile-menu-overlay" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300" onclick="toggleMobileMenu()"></div>
+        <div id="mobile-menu-overlay"
+            class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-[55] transition-opacity duration-300"
+            onclick="toggleMobileMenu()"></div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-secondary dark:bg-darkBg z-[60] flex flex-col p-6 pt-20 space-y-6 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <div id="mobile-menu"
+            class="fixed top-0 right-0 bottom-0 w-[85%] max-w-[320px] bg-secondary dark:bg-darkBg z-[60] flex flex-col p-6 pt-20 space-y-6 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
             <div class="flex justify-between items-center absolute top-6 left-6 right-6">
-                 <span class="text-lg font-bold font-playfair uppercase tracking-wider">Menu</span>
-                 <button onclick="toggleMobileMenu()" class="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
-                     <i data-lucide="x" class="w-6 h-6"></i>
-                 </button>
+                <span class="text-lg font-bold font-playfair uppercase tracking-wider">Menu</span>
+                <button onclick="toggleMobileMenu()"
+                    class="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
             </div>
-            
+
             <div class="flex flex-col space-y-4 text-xl font-playfair uppercase tracking-wide">
                 <div class="relative group">
-                     <button onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')" class="w-full flex items-center justify-between hover:text-primary transition-colors border-b border-primary/5 pb-1">
-                          <span>Home</span>
-                          <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                     </button>
-                     <div class="hidden flex flex-col space-y-4 mt-4 pl-6 border-l border-primary/10">
-                          <a href="index.html" class="hover:text-primary transition-colors text-lg">Home</a>
-                          <a href="home-2.html" class="hover:text-primary transition-colors text-lg">Home 2</a>
-                     </div>
+                    <button
+                        onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')"
+                        class="w-full flex items-center justify-between hover:text-primary transition-colors border-b border-primary/5 pb-1">
+                        <span>Home</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden flex flex-col space-y-4 mt-4 pl-6 border-l border-primary/10">
+                        <a href="index.html" class="hover:text-primary transition-colors text-lg">Home</a>
+                        <a href="home-2.html" class="hover:text-primary transition-colors text-lg">Home 2</a>
+                    </div>
                 </div>
-                <a href="about.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">About</a>
-                <a href="services.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Services</a>
-                <a href="benefits.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Benefits</a>
-                <a href="how-it-works.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">How It Works</a>
-                <a href="pricing.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Pricing</a>
-                <a href="contact.html" class="hover:text-primary transition-colors border-b border-primary/5 pb-1 border-none">Contact</a>
+                <a href="about.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1">About</a>
+                <a href="services.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Services</a>
+                <a href="benefits.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Benefits</a>
+                <a href="how-it-works.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1">How It Works</a>
+                <a href="pricing.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1">Pricing</a>
+                <a href="contact.html"
+                    class="hover:text-primary transition-colors border-b border-primary/5 pb-1 border-none">Contact</a>
             </div>
 
             <!-- Utility Row: Icons then Login -->
             <div class="flex flex-col space-y-6 pt-6 border-t border-primary/10 mt-auto">
                 <div class="flex items-center space-x-10 px-2 text-primary/70">
-                    <button onclick="document.getElementById('theme-toggle').click()" class="hover:text-primary transition-colors">
+                    <button onclick="document.getElementById('theme-toggle').click()"
+                        class="hover:text-primary transition-colors">
                         <i data-lucide="sun" class="w-7 h-7"></i>
                     </button>
-                    <button onclick="document.getElementById('rtl-toggle').click()" class="hover:text-primary transition-colors">
+                    <button onclick="document.getElementById('rtl-toggle').click()"
+                        class="hover:text-primary transition-colors">
                         <i data-lucide="languages" class="w-7 h-7"></i>
                     </button>
                     <a href="dashboard.html" class="hover:text-primary transition-colors">
                         <i data-lucide="layout-dashboard" class="w-7 h-7"></i>
                     </a>
                 </div>
-                
-                <a href="login.html" class="btn-primary py-4 text-center text-lg font-bold shadow-xl w-full rounded-full">Login</a>
+
+                <a href="login.html"
+                    class="btn-primary py-4 text-center text-lg font-bold shadow-xl w-full rounded-full">Login</a>
             </div>
         </div>
     </header>
 
     <main class="pt-20">
         <!-- Section 1: Benefits Hero -->
-        <section class="py-12 bg-white/50 dark:bg-white/5 border-b border-primary/5 text-center px-4 overflow-hidden">
-             <div class="container mx-auto max-w-3xl reveal-in">
-                  <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4 ">Clinical Benefits.</h1>
-                  <p class="text-lg opacity-60 leading-relaxed font-light ">"Clinical hypnosis is no longer a fringe practice. It is a validated medical protocol for rapid cognitive re-alignment."</p>
-             </div>
+        <section class="py-32 bg-secondary dark:bg-darkBg border-b border-primary/5 text-center px-4 overflow-hidden">
+            <div class="container mx-auto max-w-3xl reveal-in">
+                <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4 ">Clinical Benefits.</h1>
+                <p class="text-lg opacity-60 leading-relaxed font-light ">"Clinical hypnosis is no longer a fringe
+                    practice. It is a validated medical protocol for rapid cognitive re-alignment."</p>
+            </div>
         </section>
 
         <!-- Section 2: Benefit Grid (Clinical vs Somatic vs Digital) -->
-        <section class="py-32 bg-primary dark:bg-white/5 text-secondary dark:text-darkText">
+        <section class="py-20 bg-white dark:bg-white/5 text-primary dark:text-darkText">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="grid md:grid-cols-3 gap-16 reveal-up-stagger">
-                     <div>
-                          <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Clinical Rapidity</h3>
-                          <p class="opacity-70 leading-relaxed ">Most phobias and habits require an average of only 3 to 6 sessions, compared to years of talk therapy. Rapid results with long-term retention.</p>
-                     </div>
-                     <div>
-                          <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Somatic Restors</h3>
-                          <p class="opacity-70 leading-relaxed ">Directly influences the cortisol and heart-rate variability (HRV) response, teaching the body how to access calm at will through pavlovian anchors.</p>
-                     </div>
-                     <div>
-                          <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Digital Scalability</h3>
-                          <p class="opacity-70 leading-relaxed ">Your healing doesn't end with the session. Our digital audio library allows you to scale your recovery daily through guided integration.</p>
-                     </div>
+                    <div>
+                        <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Clinical
+                            Rapidity</h3>
+                        <p class="opacity-70 leading-relaxed ">Most phobias and habits require an average of only 3 to 6
+                            sessions, compared to years of talk therapy. Rapid results with long-term retention.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Somatic Restors
+                        </h3>
+                        <p class="opacity-70 leading-relaxed ">Directly influences the cortisol and heart-rate
+                            variability (HRV) response, teaching the body how to access calm at will through pavlovian
+                            anchors.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-playfair font-bold mb-6  underline underline-offset-8">Digital
+                            Scalability</h3>
+                        <p class="opacity-70 leading-relaxed ">Your healing doesn't end with the session. Our digital
+                            audio library allows you to scale your recovery daily through guided integration.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- UNIQUE BENEFIT SECTION 1: THE NEURO-METAMORPHIC EDGE (CIRCULAR PULSE) -->
-        <section class="py-32 bg-white dark:bg-darkBg overflow-hidden border-t border-primary/5">
-             <div class="container mx-auto px-4 md:px-8">
-                  <div class="flex flex-col lg:flex-row items-center gap-24">
-                       <div class="w-full lg:w-1/2 relative flex justify-center">
-                            <!-- Circular Pulse Template -->
-                            <div class="relative w-[400px] h-[400px] md:w-[600px] md:h-[600px] flex items-center justify-center">
-                                 <div class="absolute inset-0 rounded-full border border-primary/5 animate-ping opacity-20"></div>
-                                 <div class="absolute inset-10 rounded-full border border-primary/10 animate-ping opacity-20" style="animation-delay: 1s"></div>
-                                 <div class="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden shadow-2xl border-8 border-secondary group">
-                                      <img src="assets/images/therapist-p.png" alt="Neuro-Metamorphic" class="w-full h-full object-cover transition-all duration-[3000ms] group-hover:scale-110">
-                                      <div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
-                                 </div>
-                                 <!-- Pulsing Data Node 1 -->
-                                 <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white p-6 rounded-2xl shadow-xl reveal-up">
-                                      <span class="text-2xl font-bold block">94%+</span>
-                                      <span class="text-[8px] uppercase tracking-widest font-bold">Persistence</span>
-                                 </div>
-                                 <!-- Pulsing Data Node 2 -->
-                                 <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-secondary text-primary p-6 rounded-2xl shadow-xl reveal-up" style="animation-delay: 0.2s">
-                                      <span class="text-2xl font-bold block">0.1s</span>
-                                      <span class="text-[8px] uppercase tracking-widest font-bold">Sync Speed</span>
-                                 </div>
+        <section class="py-20 bg-white dark:bg-darkBg overflow-hidden border-t border-primary/5">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-24">
+                    <div class="w-full lg:w-1/2 relative flex justify-center">
+                        <!-- Circular Pulse Template -->
+                        <div
+                            class="relative w-[400px] h-[400px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+                            <div class="absolute inset-0 rounded-full border border-primary/5 animate-ping opacity-20">
                             </div>
-                       </div>
-                       <div class="w-full lg:w-1/2 reveal-left">
-                            <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">Transformation Frontier</span>
-                            <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">Neuro-Metamorphic <br><span class=" text-primary/40">Edge.</span></h2>
-                            <div class="space-y-8">
-                                 <p class="text-xl opacity-70 leading-relaxed font-light">Experience the most advanced results-tracking in clinical hypnotherapy. Our Neuro-Metamorphic protocol doesn't just "relax" the mind—it uses recursive high-gamma induction to achieve a 94.8% permanent shift rate in identity cues, ensuring your progress is structurally stable over time.</p>
-                                 <div class="flex items-center space-x-8">
-                                      <button class="btn-primary py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-all">Request Analysis</button>
-                                 </div>
+                            <div class="absolute inset-10 rounded-full border border-primary/10 animate-ping opacity-20"
+                                style="animation-delay: 1s"></div>
+                            <div
+                                class="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden shadow-2xl border-8 border-secondary group">
+                                <img src="assets/images/therapist-p.png" alt="Neuro-Metamorphic"
+                                    class="w-full h-full object-cover transition-all duration-[3000ms] group-hover:scale-110">
+                                <div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
                             </div>
-                       </div>
-                  </div>
-             </div>
+                            <!-- Pulsing Data Node 1 -->
+                            <div
+                                class="absolute -top-10 left-1/2 -translate-x-1/2 bg-primary text-white p-6 rounded-2xl shadow-xl reveal-up">
+                                <span class="text-2xl font-bold block">94%+</span>
+                                <span class="text-[8px] uppercase tracking-widest font-bold">Persistence</span>
+                            </div>
+                            <!-- Pulsing Data Node 2 -->
+                            <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-secondary text-primary p-6 rounded-2xl shadow-xl reveal-up"
+                                style="animation-delay: 0.2s">
+                                <span class="text-2xl font-bold block">0.1s</span>
+                                <span class="text-[8px] uppercase tracking-widest font-bold">Sync Speed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2 reveal-left">
+                        <span
+                            class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">Transformation
+                            Frontier</span>
+                        <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">Neuro-Metamorphic
+                            <br><span class=" text-primary/40">Edge.</span></h2>
+                        <div class="space-y-8">
+                            <p class="text-xl opacity-70 leading-relaxed font-light">Experience the most advanced
+                                results-tracking in clinical hypnotherapy. Our Neuro-Metamorphic protocol doesn't just
+                                "relax" the mind—it uses recursive high-gamma induction to achieve a 94.8% permanent
+                                shift rate in identity cues, ensuring your progress is structurally stable over time.
+                            </p>
+                            <div class="flex items-center space-x-8">
+                                <button
+                                    class="btn-primary py-4 px-10 rounded-full shadow-xl hover:scale-105 transition-all">Request
+                                    Analysis</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- UNIQUE BENEFIT SECTION 2: SOMATIC RESONANCE MAPPING (Z-PATTERN) -->
-        <section class="py-32 bg-secondary dark:bg-black/95 overflow-hidden">
-             <div class="container mx-auto px-4 md:px-8">
-                  <div class="flex flex-col lg:flex-row-reverse items-center gap-24">
-                       <div class="w-full lg:w-3/5 relative">
-                            <!-- Z-Pattern Folded Layout -->
-                            <div class="relative rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group">
-                                 <img src="assets/images/audio-p.png" alt="Somatic Resonance" class="w-full h-[500px] object-cover transition-all duration-1000 group-hover:scale-110">
-                                 <!-- Overlapping Data Box -->
-                                 <div class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-primary text-white p-12 rounded-[32px] shadow-2xl reveal-right hidden xl:block min-w-[300px]">
-                                      <h4 class="text-4xl font-playfair font-bold  mb-4">40% Cortisol Drop</h4>
-                                      <p class="text-sm opacity-70 leading-relaxed font-light">Average bio-physical reduction measured across first-stage clinical induction.</p>
-                                 </div>
+        <section class="py-20 bg-secondary dark:bg-darkBg overflow-hidden">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-24">
+                    <div class="w-full lg:w-3/5 relative">
+                        <!-- Z-Pattern Folded Layout -->
+                        <div class="relative rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group">
+                            <img src="assets/images/audio-p.png" alt="Somatic Resonance"
+                                class="w-full h-[500px] object-cover transition-all duration-1000 group-hover:scale-110">
+                            <!-- Overlapping Data Box -->
+
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-2/5 reveal-left">
+                        <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary/60 mb-6 block">Biometric
+                            Stabilization</span>
+                        <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 ">Resonance.</h2>
+                        <p class="text-xl opacity-70 mb-10 leading-relaxed">Our clinical node architecture allows us to
+                            map your Somatic Resonance in real-time. By synchronizing induction scripts to your unique
+                            Heart Rate Variability (HRV), we achieve a deep-state biological calm that persists long
+                            after the session concludes.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-6">
+                                <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i
+                                        data-lucide="activity" class="w-5 h-5 text-primary"></i></div>
+                                <span class="text-sm font-bold uppercase tracking-widest ">Real-Time HRV Feedback</span>
                             </div>
-                       </div>
-                       <div class="w-full lg:w-2/5 reveal-left">
-                            <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary/60 mb-6 block">Biometric Stabilization</span>
-                            <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 ">Resonance.</h2>
-                            <p class="text-xl opacity-70 mb-10 leading-relaxed">Our clinical node architecture allows us to map your Somatic Resonance in real-time. By synchronizing induction scripts to your unique Heart Rate Variability (HRV), we achieve a deep-state biological calm that persists long after the session concludes.</p>
-                            <div class="space-y-6">
-                                 <div class="flex items-center space-x-6">
-                                      <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"><i data-lucide="activity" class="w-5 h-5 text-primary"></i></div>
-                                      <span class="text-sm font-bold uppercase tracking-widest ">Real-Time HRV Feedback</span>
-                                 </div>
-                            </div>
-                       </div>
-                  </div>
-             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Section 3: Statistical Trust (Infographic style) -->
-        <section class="py-32 bg-[#2F5D62]/5 dark:bg-white/5">
+        <section class="py-20 bg-[#2F5D62]/5 dark:bg-white/5">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-24 reveal-up">
                     <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4 ">By the Numbers.</h2>
                 </div>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto reveal-up-stagger">
                     <div class="text-center">
-                         <span class="text-6xl font-bold font-playfair  block mb-2">93%</span>
-                         <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Success Rate Smoker.</span>
+                        <span class="text-6xl font-bold font-playfair  block mb-2">93%</span>
+                        <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Success Rate
+                            Smoker.</span>
                     </div>
                     <div class="text-center">
-                         <span class="text-6xl font-bold font-playfair  block mb-2">6</span>
-                         <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Session Mean Result.</span>
+                        <span class="text-6xl font-bold font-playfair  block mb-2">6</span>
+                        <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Session Mean
+                            Result.</span>
                     </div>
                     <div class="text-center">
-                         <span class="text-6xl font-bold font-playfair  block mb-2">50%</span>
-                         <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Less Stress hormone.</span>
+                        <span class="text-6xl font-bold font-playfair  block mb-2">50%</span>
+                        <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Less Stress
+                            hormone.</span>
                     </div>
                     <div class="text-center">
-                         <span class="text-6xl font-bold font-playfair  block mb-2">4k+</span>
-                         <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Digital Audio Users.</span>
+                        <span class="text-6xl font-bold font-playfair  block mb-2">4k+</span>
+                        <span class="opacity-40 uppercase tracking-widest text-xs  font-bold">Digital Audio
+                            Users.</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Section 4: Real World Outcomes (Testimonials) -->
-        <section class="py-32 px-4">
-             <div class="container mx-auto max-w-5xl">
-                    <div class="card-therapeutic p-16 md:p-32 rounded-[4rem] text-center shadow-2xl relative reveal-up">
-                         <div class="absolute top-10 left-1/2 -translate-x-1/2 opacity-10"><i data-lucide="quote" class="w-32 h-32"></i></div>
-                         <h2 class="text-3xl md:text-[2.5rem] font-playfair font-bold mb-12  leading-relaxed">"I spent a decade in psychoanalysis and yet nothing changed. After 4 sessions of Somatic Anchoring at HypnoClinic, my social anxiety simply... vanished. I feel reborn."</h2>
-                         <div class="flex flex-col items-center">
-                              <span class="font-bold uppercase tracking-widest  mb-1">M. S. | Architect</span>
-                              <span class="text-xs opacity-40">Client since 2024</span>
-                         </div>
+        <section class="py-20 px-4">
+            <div class="container mx-auto max-w-5xl">
+                <div class="card-therapeutic px-6 py-12 md:p-32 rounded-[2.5rem] md:rounded-[4rem] text-center shadow-2xl relative reveal-up">
+                    <div class="absolute top-10 left-1/2 -translate-x-1/2 opacity-10"><i data-lucide="quote"
+                            class="w-32 h-32"></i></div>
+                    <h2 class="text-2xl md:text-[2.5rem] font-playfair font-bold mb-12  leading-relaxed">"I spent a
+                        decade in psychoanalysis and yet nothing changed. After 4 sessions of Somatic Anchoring at
+                        HypnoClinic, my social anxiety simply... vanished. I feel reborn."</h2>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold uppercase tracking-widest  mb-1">M. S. | Architect</span>
+                        <span class="text-xs opacity-40">Client since 2024</span>
                     </div>
-                    <div class="mt-20 text-center reveal-up">
-                         <a href="contact.html" class="btn-primary py-6 px-16 text-xl rounded-full">Apply to Join</a>
-                    </div>
-             </div>
+                </div>
+                <div class="mt-20 text-center reveal-up">
+                    <a href="contact.html" class="btn-primary py-6 px-16 text-xl rounded-full">Apply to Join</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Main Footer -->
-    <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
+    <footer
+        class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-10">
                 <!-- Col 1: Brand & Socials -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-6">
@@ -281,12 +343,47 @@
                         </div>
                         <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
                     </a>
-                    <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
+                    <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through
+                        scientific neuro-somatic induction and predictive habit architectural shifts.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-primary dark:text-white">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-primary dark:text-white">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-primary dark:text-white">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-primary dark:text-white">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
@@ -297,7 +394,8 @@
                         <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
                         <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
                         <li><a href="services.html" class="hover:text-primary transition-colors">Our Services</a></li>
-                        <li><a href="benefits.html" class="hover:text-primary transition-colors">Clinical Benefits</a></li>
+                        <li><a href="benefits.html" class="hover:text-primary transition-colors">Clinical Benefits</a>
+                        </li>
                         <li><a href="pricing.html" class="hover:text-primary transition-colors">Session Pricing</a></li>
                     </ul>
                 </div>
@@ -306,8 +404,10 @@
                 <div>
                     <h4 class="text-lg font-bold mb-5  font-playfair">Clinical Support</h4>
                     <ul class="space-y-4 text-sm opacity-60">
-                        <li><a href="how-it-works.html" class="hover:text-primary transition-colors">How It Works</a></li>
-                        <li><a href="dashboard.html" class="hover:text-primary transition-colors">Client Dashboard</a></li>
+                        <li><a href="how-it-works.html" class="hover:text-primary transition-colors">How It Works</a>
+                        </li>
+                        <li><a href="dashboard.html" class="hover:text-primary transition-colors">Client Dashboard</a>
+                        </li>
                         <li><a href="#" class="hover:text-primary transition-colors">Therapy FAQs</a></li>
                         <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
                         <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
@@ -333,17 +433,22 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Bottom Copyright -->
-            <div class="pt-6 border-t border-primary/10 dark:border-white/5 text-center text-[10px] opacity-40 font-bold tracking-widest uppercase">
+            <div
+                class="pt-6 border-t border-primary/10 dark:border-white/5 text-center text-[10px] opacity-40 font-bold tracking-widest uppercase">
                 &copy; 2026 Hypnotherapy Clinical Group. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
+
 </html>
 
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Details | HypnoClinic</title>
@@ -70,7 +71,7 @@
                 <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
                     <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                 </a>
-                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                <a href="login.html" class="hidden lg:flex btn-primary">Login</a>
                 <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
                     <i data-lucide="menu" class="w-8 h-8"></i>
                 </button>
@@ -129,7 +130,7 @@
 
     <main class="pt-20">
         <!-- Section 1: Specific Service Hero -->
-        <section class="py-32 relative overflow-hidden bg-primary text-secondary">
+        <section class="py-20 relative overflow-hidden bg-primary text-secondary">
              <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-16">
                    <div class="w-full md:w-1/2 reveal-in">
                         <span class="text-xs uppercase tracking-[0.4em] mb-4 block font-bold opacity-40">Clinical Program</span>
@@ -139,7 +140,7 @@
                    </div>
                    <div class="w-full md:w-1/2 relative reveal-in">
                          <div class="rounded-[4rem] overflow-hidden shadow-2xl h-[500px]">
-                              <img src="assets/images/hero.jpg" alt="Anxiety Protocol" class="w-full h-full object-cover">
+                              <img src="assets/images/anxiety-hero.jpg" alt="Anxiety Protocol" class="w-full h-full object-cover">
                          </div>
                          <div class="absolute -top-10 -right-10 w-full h-full bg-white/5 rounded-[4rem] -z-10 translate-x-8 translate-y-8 backdrop-blur-xl"></div>
                    </div>
@@ -147,7 +148,7 @@
         </section>
 
         <!-- Section 2: Deep Dive (Mechanism) -->
-        <section class="py-32">
+        <section class="py-20">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="max-w-4xl mx-auto">
                     <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-10 text-center">The Somatic Loop</h2>
@@ -169,7 +170,7 @@
         </section>
 
         <!-- Section 3: What to expect (List/Steps) -->
-        <section class="py-32 bg-[#2F5D62]/5 dark:bg-white/5">
+        <section class="pt-20 pb-10 bg-[#2F5D62]/5 dark:bg-white/5">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-24 reveal-up">
                     <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6  underline underline-offset-[12px] decoration-1">The Journey Lifecycle</h2>
@@ -200,9 +201,32 @@
             </div>
         </section>
 
+        <!-- NEW: Clinical Roadmap to fill space -->
+        <section class="py-20 bg-white dark:bg-darkBg overflow-hidden">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto reveal-up-stagger">
+                    <div class="p-10 bg-primary/5 rounded-[3rem] border border-primary/10 relative group">
+                        <div class="absolute -top-6 left-4 md:-left-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">24h</div>
+                        <h4 class="text-xl font-bold mb-4 font-playfair uppercase tracking-wider">Alpha Shift.</h4>
+                        <p class="text-sm opacity-60 leading-relaxed">Immediate reduction in cortisol levels and stabilization of heart-rate variability markers.</p>
+                    </div>
+                    <div class="p-10 bg-primary/5 rounded-[3rem] border border-primary/10 relative group">
+                        <div class="absolute -top-6 left-4 md:-left-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">7d</div>
+                        <h4 class="text-xl font-bold mb-4 font-playfair uppercase tracking-wider">Pattern Break.</h4>
+                        <p class="text-sm opacity-60 leading-relaxed">Automatic disruption of linguistic fear-loops during active environmental triggers.</p>
+                    </div>
+                    <div class="p-10 bg-primary/5 rounded-[3rem] border border-primary/10 relative group">
+                        <div class="absolute -top-6 left-4 md:-left-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold">3wk</div>
+                        <h4 class="text-xl font-bold mb-4 font-playfair uppercase tracking-wider">Stabilization.</h4>
+                        <p class="text-sm opacity-60 leading-relaxed">Permanent integration of new cognitive architectures into the baseline operating system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 4: Next steps (Booking CTA) -->
-        <section class="py-32 px-4">
-               <div class="container mx-auto max-w-5xl text-center scroll-animate opacity-0">
+        <section class="pt-10 pb-20 px-4">
+               <div class="container mx-auto max-w-5xl text-center reveal-up">
                     <h2 class="text-4xl md:text-7xl font-playfair font-bold mb-12 ">Rewrite your Code.</h2>
                     <div class="flex flex-col md:flex-row justify-center gap-6">
                         <a href="contact.html" class="btn-primary py-6 px-16 text-xl rounded-full">Apply for the Program</a>
@@ -218,7 +242,7 @@
     <!-- Main Footer -->
     <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-10">
                 <!-- Col 1: Brand & Socials -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-6">
@@ -228,11 +252,19 @@
                         <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
                     </a>
                     <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                                        <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
                     </div>
                 </div>
 
@@ -287,10 +319,17 @@
         </div>
     </footer>
 
+            <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
+
+
+
+
 
 
 

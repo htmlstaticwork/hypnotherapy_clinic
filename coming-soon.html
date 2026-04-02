@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon | HypnoClinic</title>
@@ -28,7 +29,7 @@
 </head>
 <body class="bg-secondary dark:bg-darkBg text-primary dark:text-darkText font-inter h-screen flex flex-col items-center justify-center p-4 text-center">
 
-    <div class="scroll-animate opacity-0">
+    <div>
         <a href="index.html" class="flex items-center justify-center space-x-2 mb-20 group">
                 <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-all">
                     <i data-lucide="brain-circuit"></i>
@@ -56,7 +57,12 @@
          <button id="rtl-toggle" class="p-3 bg-white dark:bg-white/5 rounded-full shadow-xl shadow-primary/5 active:scale-95 transition-all"><i data-lucide="languages" class="w-6 h-6"></i></button>
     </div>
 
+            <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
+
+

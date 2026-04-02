@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | HypnoClinic</title>
@@ -74,7 +75,7 @@
                 <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full">
                     <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                 </a>
-                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                <a href="login.html" class="hidden lg:flex btn-primary">Login</a>
                 <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
                     <i data-lucide="menu" class="w-8 h-8"></i>
                 </button>
@@ -132,19 +133,15 @@
 
     <main class="pt-20">
         <!-- Section 1: Hero (Who we are) -->
-        <section class="py-12 bg-white/50 dark:bg-white/5 border-b border-primary/5">
+        <section class="py-32 bg-secondary dark:bg-darkBg border-b border-primary/5">
             <div class="container mx-auto px-4 md:px-8 text-center max-w-2xl reveal-in">
                 <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-4 ">Pioneering the Internal Dialogue.</h1>
                 <p class="text-lg opacity-60 leading-relaxed font-light">Founded in 2015, HypnoClinic started with a single session and a simple question: Can we use neuroplasticity to erase lifelong phobias in weeks?</p>
             </div>
         </section>
 
-        </section>
-
-        </section>
-
         <!-- Section 2: Mission & Vision -->
-        <section class="py-32 bg-primary dark:bg-white/5 text-secondary dark:text-darkText">
+        <section class="py-20 bg-white dark:bg-white/5 text-primary dark:text-darkText">
             <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-24">
                 <div class="reveal-up">
                     <i data-lucide="target" class="w-12 h-12 mb-8 text-secondary/50"></i>
@@ -159,14 +156,70 @@
             </div>
         </section>
 
+        <!-- Section 2.5: UNIQUE - CLINICAL PROVENANCE (Living Archive) -->
+        <section class="py-24 relative bg-secondary dark:bg-darkBg overflow-hidden border-y border-primary/5">
+             
+
+             <div class="container mx-auto px-4 md:px-8 relative z-10">
+                  <div class="flex flex-col lg:flex-row items-center gap-24">
+                       <!-- Left Column: Data Nodes -->
+                       <div class="w-full lg:w-1/2 space-y-12">
+                            <div class="reveal-up">
+                                 <span class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-6 block">The Archive Protocol</span>
+                                 <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">Clinical <br><span class="text-primary/40">Provenance.</span></h2>
+                                 <p class="text-xl opacity-70 leading-relaxed font-light max-w-xl">Every methodology at HypnoClinic is the result of a multi-phase clinical evolution. We don't just apply scripts; we architect neural pathways based on a decade of refined somatic data.</p>
+                            </div>
+
+                             <!-- Interactive Data Nodes -->
+                             <div class="space-y-8">
+                                  <div class="provenance-node reveal-up group p-8 bg-white dark:bg-white/10 rounded-[2.5rem] border border-primary/10 shadow-sm hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                                       <div class="flex items-start justify-between mb-4">
+                                            <span class="text-[10px] font-bold uppercase tracking-widest opacity-40">Phase 0: Synchronization</span>
+                                            <span class="text-xs font-bold text-primary">2015-2018</span>
+                                       </div>
+                                       <h4 class="text-xl font-bold font-playfair mb-2">Neural Baseline Mapping</h4>
+                                       <p class="text-sm opacity-60">The first stage of our scientific journey, identifying the precise triggers for theta-wave induction across 500+ clinical subjects.</p>
+                                  </div>
+                                  <div class="provenance-node reveal-up group p-8 bg-white dark:bg-white/10 rounded-[2.5rem] border border-primary/10 shadow-sm hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                                       <div class="flex items-start justify-between mb-4">
+                                            <span class="text-[10px] font-bold uppercase tracking-widest opacity-40">Phase 1: Stabilization</span>
+                                            <span class="text-xs font-bold text-primary">2019-2022</span>
+                                       </div>
+                                       <h4 class="text-xl font-bold font-playfair mb-2">Somatic Anchoring v2.1</h4>
+                                       <p class="text-sm opacity-60">Developing the physical-to-mental bridge logic that allows for instant emotional stabilization in high-stress environments.</p>
+                                  </div>
+                             </div>
+                       </div>
+
+                       <!-- Right Column: Asymmetrical Visual -->
+                       <div class="w-full lg:w-1/2 relative">
+                            <div class="relative w-full aspect-square rounded-[4rem] overflow-hidden shadow-3xl group border border-white/10">
+                                 <img src="assets/images/provenance.png" alt="Clinical Provenance" class="w-full h-full object-cover transition-all duration-[3000ms] group-hover:scale-110">
+                                 <!-- Glassmorphic Overlay -->
+                                 <div class="absolute bottom-10 left-10 right-10 bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 text-white reveal-right">
+                                      <div class="flex items-center space-x-4 mb-4">
+                                           <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                                           <span class="text-[10px] uppercase font-bold tracking-widest">Active Data Stream</span>
+                                      </div>
+                                      <p class="text-sm font-light leading-relaxed">Phase 2: Predictive Neural Paths. Currently undergoing clinical trials for 2026 deployment.</p>
+                                 </div>
+                            </div>
+                            <!-- Floating Geometric Accents -->
+                            <div class="absolute -top-10 -left-10 w-40 h-40 border-[1px] border-primary/10 rounded-full animate-spin-slow"></div>
+                            <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-primary/5 rounded-full blur-3xl invisible md:visible"></div>
+                       </div>
+                  </div>
+             </div>
+        </section>
+
         <!-- Section 3: Our Team -->
-        <section class="py-32">
+        <section class="py-20">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-20 reveal-up">
                     <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-4">The Practitioners</h2>
                     <p class="opacity-70">A collective of scientists, therapists, and motion designers.</p>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-12 max-w-5xl mx-auto reveal-up-stagger">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto reveal-up-stagger">
                     <div class="text-center">
                         <div class="w-full aspect-square bg-primary/10 rounded-[2rem] mb-6 overflow-hidden">
                              <img src="assets/images/therapist.jpg" alt="Dr. Thorne" class="w-full h-full object-cover">
@@ -175,12 +228,16 @@
                         <span class="text-sm opacity-50 uppercase tracking-widest">Clinical Lead</span>
                     </div>
                     <div class="text-center">
-                        <div class="w-full aspect-square bg-primary/10 rounded-[2rem] mb-6 flex items-center justify-center"><i data-lucide="user" class="w-12 h-12 opacity-20"></i></div>
+                        <div class="w-full aspect-square bg-primary/10 rounded-[2rem] mb-6 overflow-hidden">
+                             <img src="assets/images/marcus_chen.png" alt="Marcus Chen" class="w-full h-full object-cover">
+                        </div>
                         <h4 class="font-bold">Marcus Chen</h4>
                         <span class="text-sm opacity-50 uppercase tracking-widest">Technician</span>
                     </div>
                     <div class="text-center">
-                        <div class="w-full aspect-square bg-primary/10 rounded-[2rem] mb-6 flex items-center justify-center"><i data-lucide="user" class="w-12 h-12 opacity-20"></i></div>
+                        <div class="w-full aspect-square bg-primary/10 rounded-[2rem] mb-6 overflow-hidden">
+                             <img src="assets/images/sarah_vane.png" alt="Sarah Vane" class="w-full h-full object-cover">
+                        </div>
                         <h4 class="font-bold">Sarah Vane</h4>
                         <span class="text-sm opacity-50 uppercase tracking-widest">Patient Lead</span>
                     </div>
@@ -189,7 +246,7 @@
         </section>
 
         <!-- Section 4: Philosophy -->
-        <section class="py-32 bg-[#2F5D62]/5 dark:bg-white/5 overflow-hidden">
+        <section class="py-20 bg-[#2F5D62]/5 dark:bg-white/5 overflow-hidden">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="flex flex-col md:flex-row items-center gap-16">
                    <div class="w-full md:w-1/2 reveal-up">
@@ -220,7 +277,7 @@
     <!-- Main Footer -->
     <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-10">
                 <!-- Col 1: Brand & Socials -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-6">
@@ -230,11 +287,19 @@
                         <span class="text-xl font-bold font-playfair uppercase tracking-wider">HypnoClinic</span>
                     </a>
                     <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                                        <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
                     </div>
                 </div>
 
@@ -289,10 +354,17 @@
         </div>
     </footer>
 
+            <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
+
+
+
+
 
 
 

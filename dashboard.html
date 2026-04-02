@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | HypnoClinic</title>
@@ -33,11 +34,16 @@
 
     <!-- Dashboard Sidebar -->
     <aside id="dashboard-sidebar" class="dashboard-sidebar flex flex-col p-8 transition-all duration-300 z-[100]">
-        <a href="index.html" class="flex items-center space-x-3 mb-16 group">
-            <div class="w-10 h-10 bg-secondary text-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-all">
+        <!-- Mobile Close Button -->
+        <button onclick="toggleSidebar()" class="lg:hidden absolute top-4 right-4 p-2 transition-all opacity-50 hover:opacity-100 z-[110]">
+             <i data-lucide="x" class="w-6 h-6 text-darkBg"></i>
+        </button>
+
+        <a href="index.html" class="flex items-center space-x-2 mb-16 group">
+            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-all">
                 <i data-lucide="brain-circuit"></i>
             </div>
-            <span class="text-xl font-bold font-playfair uppercase tracking-wider text-secondary">HypnoClinic</span>
+            <span class="text-xl font-bold font-playfair uppercase tracking-wider text-white">HypnoClinic</span>
         </a>
 
         <div class="space-y-4 flex-grow text-sm uppercase tracking-widest font-bold opacity-70">
@@ -61,8 +67,8 @@
             </button>
         </div>
 
-        <button onclick="window.location.href='login.html'" class="mt-auto p-4 rounded-2xl hover:bg-red-500/10 flex items-center space-x-4 text-red-100 font-bold text-sm tracking-widest">
-            <i data-lucide="log-out" class="w-5 h-5"></i> <span>Logout Subspace</span>
+        <button onclick="window.location.href='index.html'" class="mt-auto p-4 rounded-2xl hover:bg-red-500/10 flex items-center space-x-4 text-red-100 font-bold text-sm tracking-widest">
+            <i data-lucide="log-out" class="w-5 h-5"></i> <span>Logout</span>
         </button>
     </aside>
 
@@ -292,8 +298,8 @@
 
              <!-- TAB: SESSIONS -->
              <div id="sessions" class="tab-pane hidden space-y-8">
-                  <div class="card-therapeutic p-0 overflow-hidden">
-                       <table class="w-full text-left">
+                  <div class="card-therapeutic p-0 overflow-x-auto clinical-scrollbar">
+    <table class="w-full min-w-[600px] text-left">
                             <thead class="bg-primary/5 text-xs uppercase tracking-widest font-bold">
                                  <tr>
                                       <th class="p-6">Protocol Type</th>
@@ -308,8 +314,8 @@
                                       <td class="p-6 font-bold text-primary dark:text-darkText">Anxiety Architecture v2</td>
                                       <td class="p-6">Dr. Thorne</td>
                                       <td class="p-6">March 28, 2026</td>
-                                      <td class="p-6"><span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold">Stabilized</span></td>
-                                      <td class="p-6"><button class="text-primary hover:underline">View Notes</button></td>
+                                      <td class="p-6"><span class="bg-primary/10 text-primary dark:text-white px-3 py-1 rounded-full text-[10px] uppercase font-bold">Stabilized</span></td>
+                                      <td class="p-6"><button class="text-primary dark:text-white/80 hover:underline">View Notes</button></td>
                                  </tr>
                             </tbody>
                        </table>
@@ -387,22 +393,7 @@
                             </div>
                        </div>
                        
-                       <!-- Past / Logs -->
-                       <div class="pt-12 border-t border-primary/5">
-                            <span class="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 ml-2">Protocol Logs</span>
-                            <div class="mt-6 space-y-4">
-                                 <div class="flex items-center justify-between px-8 py-5 bg-primary/5 rounded-[2rem] border border-primary/5 opacity-40 hover:opacity-100 transition-opacity group">
-                                      <div class="flex items-center space-x-4">
-                                           <div class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center"><i data-lucide="check-circle" class="w-4 h-4"></i></div>
-                                           <div class="flex flex-col">
-                                                <span class="text-sm font-bold">Affirmation Echo v1.2 Dispatch</span>
-                                                <span class="text-[9px] uppercase tracking-widest opacity-60 mt-1">Status: Success</span>
-                                           </div>
-                                      </div>
-                                      <span class="text-[10px] uppercase font-bold tracking-[0.2em]">Completed Yesterday</span>
-                                 </div>
-                            </div>
-                       </div>
+                       
                   </div>
              </div>
 
@@ -502,6 +493,9 @@
         </div>
     </main>
 
+            <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         lucide.createIcons();
@@ -525,7 +519,26 @@
             color: #fff;
             opacity: 1 !important;
         }
+        .clinical-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .clinical-scrollbar::-webkit-scrollbar-track {
+            background: rgba(47, 93, 98, 0.05);
+            border-radius: 10px;
+        }
+        .clinical-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(47, 93, 98, 0.2);
+            border-radius: 10px;
+        }
+        body.dark .clinical-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        body.dark .clinical-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </body>
 </html>
+
+
 

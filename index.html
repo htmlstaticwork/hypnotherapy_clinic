@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HypnoClinic | Clinical Hypnotherapy</title>
@@ -73,7 +74,7 @@
                 <a href="dashboard.html" class="hidden lg:flex p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full" title="Dashboard">
                     <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                 </a>
-                <a href="login.html" class="hidden lg:flex btn-primary py-2 px-6">Login</a>
+                <a href="login.html" class="hidden lg:flex btn-primary">Login</a>
                 
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-toggle" class="lg:hidden p-2 text-primary">
@@ -132,113 +133,117 @@
         </div>
     </header>
 
-    <main>
+    <main class="relative">
+        <div class="clinical-glow glow-top-right opacity-30"></div>
+        <div class="clinical-glow glow-bottom-left opacity-20"></div>
+
         <!-- Hero Section -->
-        <section class="min-h-screen flex items-center pt-20 overflow-hidden">
-            <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center">
-                <div class="reveal-in">
-                    <h1 class="text-5xl md:text-7xl font-playfair font-bold leading-tight mb-6">
-                        Unlock your <br><span class=" text-primary/80">Subconscious.</span>
+        <section class="hero-clinical">
+            <div class="coord-marker coord-top-left">LOC_SYNC: 51.5074 N, 0.1278 W</div>
+            <div class="hero-container">
+                <div class="hero-content-editorial reveal-in editorial-overlap">
+                    <div class="data-badge mb-8 animate-pulse-subtle">
+                        <span>Terminal v.102</span>
+                        <span class="opacity-30">|</span>
+                        <span>Active Neural Scan</span>
+                    </div>
+                    <h1 class="hero-title-main reveal-word">
+                        Unlock your <br><span class="text-primary-light">Subconscious.</span>
                     </h1>
-                    <p class="text-lg md:text-xl opacity-80 mb-10 max-w-lg leading-relaxed">
+                    <p class="hero-paragraph-clinical">
                         Experience the most advanced clinical hypnotherapy methods to rewire your brain and break free from anxiety, bad habits, and phobias.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="contact.html" class="btn-primary px-8 py-4">Book Diagnostic Session</a>
-                        <a href="services.html" class="btn-secondary px-8 py-4">Explore Methods</a>
+                        <a href="contact.html" class="btn-primary w-full sm:w-auto text-center">Book Diagnostic Session</a>
+                        <a href="services.html" class="btn-secondary w-full sm:w-auto text-center">Explore Methods</a>
                     </div>
                 </div>
-                <div class="relative reveal-up">
-                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl animate-gentle">
-                        <img src="assets/images/hero.jpg" alt="Clinical peaceful environment" class="w-full h-[600px] object-cover" loading="lazy">
+                <div class="hero-media-protocol reveal-up shift-right-overlap">
+                    <div class="hero-image-frame animate-float-premium">
+                        <img src="assets/images/hero.jpg" alt="Clinical peaceful environment">
+                        <div class="hero-mask-overlay"></div>
                     </div>
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+                    
+                </div>
+            </div>
+            <div class="coord-marker coord-bottom-right">NODE_ID: CLI_H1_SEC_01</div>
+        </section>
+
+        <div class="section-divider-neural"></div>
+
+        <!-- Solutions Grid -->
+        <section class="solutions-protocol">
+            <div class="solutions-container">
+                <div class="solutions-header-editorial reveal-up">
+                    <span class="solutions-subtitle">Clinical Modules</span>
+                    <h2 class="solutions-title-clinical italic text-clinical-mask">Targeted Solutions.</h2>
+                    <p class="solutions-desc-editorial leading-relaxed">Precision focus areas where clinical neuro-somatic induction yields proven therapeutic breakthroughs.</p>
+                </div>
+                <div class="protocol-grid-system">
+                    <!-- Solution 1 -->
+                    <div class="protocol-card-clinical reveal-up">
+                        <div class="protocol-visual-node">
+                             <img src="assets/images/anxiety.png" alt="Anxiety & Stress">
+                        </div>
+                        <h3 class="protocol-title-secondary font-playfair">Anxiety & Stress</h3>
+                        <p class="protocol-desc-clinical">Calm the nervous system and release deep-seated tension through somatic re-anchoring.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 text-xs">Learn More</a>
+                    </div>
+                    <!-- Solution 2 -->
+                    <div class="protocol-card-clinical reveal-up">
+                        <div class="protocol-visual-node">
+                             <img src="assets/images/habits.png" alt="Habit Breaking">
+                        </div>
+                        <h3 class="protocol-title-secondary font-playfair">Habit Breaking</h3>
+                        <p class="protocol-desc-clinical">Systematically dismantle the neural triggers for smoking, eating patterns, and more.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 text-xs">Learn More</a>
+                    </div>
+                    <!-- Solution 3 -->
+                    <div class="protocol-card-clinical reveal-up">
+                        <div class="protocol-visual-node">
+                             <img src="assets/images/performance.png" alt="Peak Performance">
+                        </div>
+                        <h3 class="protocol-title-secondary font-playfair">Peak Performance</h3>
+                        <p class="protocol-desc-clinical">Access the flow state on command and remove identity-level limitations for success.</p>
+                        <a href="service-details.html" class="btn-secondary py-3 px-8 text-xs">Learn More</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Solutions Grid -->
-        <section class="py-24 bg-white/50 dark:bg-white/5">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
-                    <h2 class="text-3xl md:text-5xl font-playfair font-bold mb-4">Targeted Solutions.</h2>
-                    <p class="opacity-70">Focus areas where clinical hypnosis shows the highest success rates.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-12 reveal-up-stagger">
-                    <!-- Solution 1 -->
-                    <div class="card-therapeutic group text-center flex flex-col items-center">
-                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
-                             <img src="assets/images/anxiety.png" alt="Anxiety & Stress" class="w-full h-full object-cover transition-all duration-700">
-                        </div>
-                        <h3 class="text-3xl font-bold mb-4 font-playfair">Anxiety & Stress</h3>
-                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Calm the nervous system and release deep-seated tension through somatic re-anchoring.</p>
-                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
+        <div class="section-divider-neural"></div>
+
+        <section class="biofeedback-hub">
+            <div class="biofeedback-container">
+                <div class="biofeedback-content-editorial reveal-left">
+                    <div class="data-badge mb-6">
+                        <span>Diagnostic Engine v.09</span>
                     </div>
-                    <!-- Solution 2 -->
-                    <div class="card-therapeutic group text-center flex flex-col items-center scroll-animate opacity-0" style="animation-delay: 0.1s; transform: translateY(30px)">
-                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
-                             <img src="assets/images/habits.png" alt="Habit Breaking" class="w-full h-full object-cover transition-all duration-700">
+                    <h2 class="biofeedback-title-main reveal-word">The Bio-Feedback <br><span class="accent-neural">Protocol.</span></h2>
+                    <p class="biofeedback-desc-clinical">We don't guess at therapeutic depth. Our neuro-somatic interfaces monitor respiratory, galvanic, and theta-wave shifts in real-time, ensuring every induction is calibrated to your subconscious threshold.</p>
+                    <div class="biofeedback-metric-grid">
+                        <div class="biofeedback-metric-card">
+                            <span class="metric-value-dynamic">0.2ms</span>
+                            <span class="metric-label-clinical">Latency Response</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 font-playfair">Habit Breaking</h3>
-                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Systematically dismantle the neural triggers for smoking, eating patterns, and more.</p>
-                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
-                    </div>
-                    <!-- Solution 3 -->
-                    <div class="card-therapeutic group text-center flex flex-col items-center scroll-animate opacity-0" style="animation-delay: 0.2s; transform: translateY(30px)">
-                        <div class="mb-10 w-full h-56 bg-secondary rounded-[32px] overflow-hidden shadow-2xl border border-primary/10 group-hover:scale-[1.02] transition-all duration-700">
-                             <img src="assets/images/performance.png" alt="Peak Performance" class="w-full h-full object-cover transition-all duration-700">
+                        <div class="biofeedback-metric-card">
+                            <span class="metric-value-dynamic">99.4%</span>
+                            <span class="metric-label-clinical">Induction Stability</span>
                         </div>
-                        <h3 class="text-3xl font-bold mb-4 font-playfair">Peak Performance</h3>
-                        <p class="opacity-70 mb-8 leading-relaxed max-w-xs">Access the flow state on command and remove identity-level limitations for success.</p>
-                        <a href="service-details.html" class="btn-secondary py-3 px-8 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-md">Learn More</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="py-32 overflow-hidden bg-white dark:bg-darkBg">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-20">
-                    <div class="w-full lg:w-1/2 reveal-left">
-                        <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-6 block">Real-time Metrics</span>
-                        <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-8 leading-tight">The Bio-Feedback <br><span class=" text-primary/40">Protocol.</span></h2>
-                        <p class="text-xl opacity-70 mb-10 leading-relaxed font-light">We don't guess at therapeutic depth. Our neuro-somatic interfaces monitor respiratory, galvanic, and theta-wave shifts in real-time, ensuring every induction is calibrated to your subconscious threshold.</p>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div class="border-l-2 border-primary/20 pl-6">
-                                <span class="block text-3xl font-bold mb-2">0.2ms</span>
-                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Latency Response</span>
-                            </div>
-                            <div class="border-l-2 border-primary/20 pl-6">
-                                <span class="block text-3xl font-bold mb-2">99.4%</span>
-                                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40">Induction Stability</span>
-                            </div>
-                        </div>
+                <div class="biofeedback-media-interface reveal-right">
+                    <div class="biofeedback-image-frame shift-left-overlap">
+                        <img src="assets/images/biofeedback.png" alt="Biofeedback Protocol">
+                        <div class="biofeedback-scan-bar"></div>
                     </div>
-                    <div class="w-full lg:w-1/2 relative reveal-right">
-                        <div class="absolute -inset-4 bg-primary/5 rounded-[48px] blur-3xl animate-pulse"></div>
-                        <img src="assets/images/biofeedback.png" alt="Biofeedback Protocol" class="relative z-10 rounded-[48px] shadow-2xl object-cover h-[600px] w-full border border-primary/10">
-                        <!-- Floating Data UI element -->
-                        <div class="absolute -bottom-10 -left-10 bg-white dark:bg-darkBg p-8 rounded-3xl shadow-2xl border border-primary/5 z-20 hidden md:block animate-float">
-                             <div class="flex items-center space-x-4 mb-4">
-                                 <div class="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-                                 <span class="text-[10px] uppercase font-bold tracking-widest">Active Neural Scan</span>
-                             </div>
-                             <div class="space-y-4">
-                                 <div class="h-1 w-32 bg-primary/10 rounded-full overflow-hidden">
-                                     <div class="h-full bg-primary w-2/3"></div>
-                                 </div>
-                                 <div class="h-1 w-24 bg-primary/10 rounded-full overflow-hidden">
-                                     <div class="h-full bg-primary w-1/3"></div>
-                                 </div>
-                             </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </section>
 
         <!-- UNIQUE SECTION 2: NEURAL ARCHITECTURE DEEP DIVE -->
-        <section class="py-32 bg-secondary/30 dark:bg-primary/5">
+        <section class="py-20 bg-secondary/30 dark:bg-primary/5">
              <div class="container mx-auto px-4 md:px-8 text-center mb-20 reveal-up">
                   <span class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-6 block">Core Methodology</span>
                   <h2 class="text-5xl md:text-7xl font-playfair font-bold mb-6">Neural Architecture.</h2>
@@ -262,7 +267,7 @@
         </section>
 
         <!-- UNIQUE SECTION 3: QUANTIFIED TRANSFORMATION MAP -->
-        <section class="py-32 bg-primary dark:bg-black text-white relative overflow-hidden">
+        <section class="py-20 bg-primary dark:bg-black text-white relative overflow-hidden">
              <!-- Background pattern -->
              <div class="absolute inset-0 opacity-10 pointer-events-none">
                   <div class="absolute top-0 right-0 w-96 h-96 bg-secondary/40 blur-3xl animate-float"></div>
@@ -321,7 +326,7 @@
     <!-- Main Footer -->
     <footer class="bg-secondary dark:bg-darkBg text-primary dark:text-white py-12 border-t border-primary/20 dark:border-primary/10">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-10">
                 <!-- Col 1: Brand & Socials -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-6">
@@ -332,10 +337,18 @@
                     </a>
                     <p class="text-sm opacity-60 leading-relaxed mb-6">Pioneering clinical hypnotherapy through scientific neuro-somatic induction and predictive habit architectural shifts.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/5 dark:bg-white/5 hover:bg-primary hover:text-white transition-all rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary dark:text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
                     </div>
                 </div>
 
@@ -390,10 +403,16 @@
         </div>
     </footer>
 
+            <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>lucide.createIcons();</script>
 </body>
 </html>
+
+
+
 
 
 
