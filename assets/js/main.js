@@ -586,7 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
         border: none;
         border-radius: 50%;
         cursor: pointer;
-        z-index: 999;
+        z-index: 40;
         display: flex;
         align-items: center;
         justify-content: center;

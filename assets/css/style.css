@@ -282,6 +282,20 @@ body.dark #mobile-menu .mobile-nav-current-parent {
   border-color: rgba(255, 255, 255, 0.24);
 }
 
+body.dark #mobile-menu .flex.items-center.space-x-10.px-2 {
+  color: rgba(230, 240, 238, 0.92);
+}
+
+body.dark #mobile-menu .flex.items-center.space-x-10.px-2 > button,
+body.dark #mobile-menu .flex.items-center.space-x-10.px-2 > a {
+  color: inherit;
+}
+
+body.dark #mobile-menu .flex.items-center.space-x-10.px-2 > button:hover,
+body.dark #mobile-menu .flex.items-center.space-x-10.px-2 > a:hover {
+  color: #ffffff;
+}
+
 @media (min-width: 1024px) and (max-width: 1279px) {
   header nav > .hidden.lg\:flex.items-center.space-x-6 {
     display: none !important;
@@ -317,6 +331,17 @@ body.dark #mobile-menu .mobile-nav-current-parent {
   background: var(--primary-hover);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 20px 30px -10px var(--primary);
+}
+
+.contact-submit-btn {
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.18s ease !important;
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+.contact-submit-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
 }
 
 .pricing-featured-cta.btn-primary {
@@ -614,6 +639,55 @@ body:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5,
 body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="dark:text-white/80"],
 body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="dark:text-darkText/60"] {
   color: rgba(230, 240, 238, 0.92) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="dark:text-darkText/70"] {
+  color: rgba(230, 240, 238, 0.94) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-30"] {
+  opacity: 0.74;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-40"] {
+  opacity: 0.8;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-50"] {
+  opacity: 0.86;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-60"] {
+  opacity: 0.9;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-70"] {
+  opacity: 0.94;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="opacity-80"] {
+  opacity: 0.97;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/40"] {
+  color: rgba(230, 240, 238, 0.72) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/50"] {
+  color: rgba(230, 240, 238, 0.78) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/60"] {
+  color: rgba(230, 240, 238, 0.84) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/70"] {
+  color: rgba(230, 240, 238, 0.9) !important;
+}
+
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/80"],
+body.dark:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-primary/85"] {
+  color: rgba(230, 240, 238, 0.94) !important;
 }
 
 body:not(.auth-page) :is(p, span, div, li, a, label, td, th, h1, h2, h3, h4, h5, h6)[class*="text-white/40"] {
