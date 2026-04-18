@@ -59,7 +59,7 @@
             <button onclick="switchTab('reminders')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 flex items-center space-x-4">
                 <i data-lucide="bell" class="w-5 h-5"></i> <span>Reminders</span>
             </button>
-            <button onclick="switchTab('profile')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 flex items-center space-x-4">
+            <button id="profile-tab-btn" onclick="switchTab('profile')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 flex items-center space-x-4">
                 <i data-lucide="user" class="w-5 h-5"></i> <span>Profile</span>
             </button>
             <button onclick="switchTab('settings')" class="tab-btn w-full text-left p-4 rounded-2xl hover:bg-white/10 flex items-center space-x-4">
@@ -75,16 +75,19 @@
     <!-- Main Content -->
     <main class="dashboard-content h-screen flex flex-col pt-0 px-0 overflow-y-auto">
         <!-- Topbar (Sticky) -->
-        <header class="sticky top-0 flex items-center justify-between py-2 md:py-8 mb-4 md:mb-8 px-4 md:px-12 bg-secondary/95 dark:bg-darkBg/95 backdrop-blur-xl z-[90] border-b border-primary/5">
-            <div class="flex items-center space-x-4 xl:hidden">
-                 <button onclick="toggleSidebar()" class="p-2.5 bg-white dark:bg-white/5 rounded-xl shadow-lg"><i data-lucide="menu" class="w-5 h-5"></i></button>
+        <header class="sticky top-0 flex items-center justify-between flex-nowrap gap-2 md:gap-4 py-2 md:py-8 mb-4 md:mb-8 px-3 sm:px-4 md:px-12 bg-secondary/95 dark:bg-darkBg/95 backdrop-blur-xl z-[90] border-b border-primary/5">
+            <div class="flex items-center xl:hidden shrink-0">
+                 <button onclick="toggleSidebar()" class="p-2 sm:p-2.5 bg-white dark:bg-white/5 rounded-xl shadow-lg"><i data-lucide="menu" class="w-4 h-4 sm:w-5 sm:h-5"></i></button>
             </div>
-            <div>
-                 <h2 id="tab-title" class="text-lg md:text-3xl font-playfair font-bold">Client Dashboard</h2>
+            <div class="min-w-0 flex-1">
+                 <h2 id="tab-title" class="text-base sm:text-lg md:text-3xl font-playfair font-bold whitespace-nowrap leading-none">Client Dashboard</h2>
             </div>
-            <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"><i data-lucide="moon" class="w-5 h-5"></i></button>
-                <button id="rtl-toggle" class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"><i data-lucide="languages" class="w-5 h-5"></i></button>
+            <div class="flex items-center space-x-1 sm:space-x-2 md:space-x-4 shrink-0">
+                <button id="theme-toggle" class="p-1.5 sm:p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4 sm:w-5 sm:h-5"></i></button>
+                <button id="rtl-toggle" class="p-1.5 sm:p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"><i data-lucide="arrow-left-right" class="w-4 h-4 sm:w-5 sm:h-5"></i></button>
+                <button onclick="document.getElementById('profile-tab-btn').click()" class="p-1.5 sm:p-2 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 rounded-full transition-colors" aria-label="Open profile">
+                    <i data-lucide="user" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                </button>
             </div>
         </header>
 
@@ -92,6 +95,10 @@
         <div id="tab-content" class="px-4 md:px-12 scroll-animate opacity-0 active">
              <!-- TAB: OVERVIEW -->
              <div id="overview" class="tab-pane space-y-8 pb-12">
+                 <div class="card-therapeutic p-5 md:p-6 bg-white dark:bg-white/5">
+                      <h3 class="text-base md:text-lg font-playfair font-bold">Welcome back. Your progress is building beautifully.</h3>
+                      <p class="text-sm opacity-70 mt-2">You are on track with your clinical plan. Continue today&apos;s protocol to keep your momentum strong.</p>
+                 </div>
                  <!-- Quick Stats -->
                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                       <div class="card-therapeutic p-8 flex flex-col justify-between h-44 bg-primary text-secondary dark:bg-white/5 dark:text-darkText border-none shadow-xl shadow-primary/20">
