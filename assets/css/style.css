@@ -297,15 +297,15 @@ body.dark #mobile-menu .flex.items-center.space-x-10.px-2 > a:hover {
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
-  header nav > .hidden.lg\:flex.items-center.space-x-6 {
+  header nav > .hidden.lg\:flex {
     display: none !important;
   }
 
-  header nav > .flex.items-center.space-x-4 > .hidden.lg\:flex {
+  header nav .flex.items-center > .hidden.lg\:flex {
     display: none !important;
   }
 
-  header nav > .flex.items-center.space-x-4 > #mobile-menu-toggle.lg\:hidden {
+  header nav #mobile-menu-toggle.lg\:hidden {
     display: flex !important;
     align-items: center;
     justify-content: center;
